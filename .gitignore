@@ -2,5 +2,8 @@
 hugo.zip
 resources/_gen/
 scratch/
+node_modules/
+.astro/
+dist/
 .DS_Store
 Thumbs.db

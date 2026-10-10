@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { entryPath, cleanId, isSectionIndex } from '../../lib/routes';
+export function getStaticPaths() {
+  return ['articles','docs','recommend','faq','reviews'].map((section) => ({ params: { section } }));
+}
+const { section } = Astro.params;
+const all = await getCollection('blog', ({ data }) => data.draft !== true);
+const index = all.find((entry) => cleanId(entry.id) === `${section}/_index`);
+const posts = all.filter((entry) => cleanId(entry.id).startsWith(`${section}/`) && !isSectionIndex(entry.id)).sort((a,b) => (b.data.date?.valueOf() ?? 0) - (a.data.date?.valueOf() ?? 0));
+const titles = { articles:'文章科普', docs:'教程知识库', recommend:'机场推荐榜', faq:'故障 FAQ', reviews:'深度测评' };
+---
+<Base title={`${index?.data.title ?? titles[section]} · 极客网络实验室`} description={index?.data.description}><section class="page-intro shell"><p class="eyebrow">{section?.toUpperCase()}</p><h1>{index?.data.title ?? titles[section]}</h1><p>{index?.data.description}</p></section><section class="section shell"><div class="post-grid post-grid-wide">{posts.map((post) => <article class="post-card"><div class="post-meta"><span>{section?.toUpperCase()}</span><time>{post.data.date?.toISOString().slice(0,10)}</time></div><h2><a href={`/${entryPath(post)}/`}>{post.data.title}</a></h2><p>{post.data.description}</p><a class="read-more" href={`/${entryPath(post)}/`}>继续阅读 ↗</a></article>)}</div></section></Base>
