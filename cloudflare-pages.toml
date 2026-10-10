@@ -1,0 +1,8 @@
+# Cloudflare Pages Git build settings reference.
+# Dashboard values: build command `npm run build`, output directory `dist`, root `/`.
+[build]
+command = "npm run build"
+output_dir = "dist"
+
+[build.environment]
+NODE_VERSION = "22"
