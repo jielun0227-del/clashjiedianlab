@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TUIC v5 协议全指南：基于 QUIC 协议的高速低延迟代理实践 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="基于 QUIC 协议的 TUIC v5 代理全方位指南，涵盖 0-RTT 快速握手、多路复用与 UDP 加速配置。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/tuic-protocol-guide/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-09\",\"datePublished\":\"2026-10-09\",\"description\":\"基于 QUIC 协议的 TUIC v5 代理全方位指南，涵盖 0-RTT 快速握手、多路复用与 UDP 加速配置。\",\"headline\":\"TUIC v5 协议全指南：基于 QUIC 协议的高速低延迟代理实践\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/tuic-protocol-guide/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>TUIC v5 协议全指南：基于 QUIC 协议的高速低延迟代理实践</h1><div class="article-meta"><time>更新于 2026 年 10 月 09 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-tuic-协议核心黑科技">一、 TUIC 协议核心黑科技</a></li>
+    <li><a href="#二-tuic-v5-配置参数与实战">二、 TUIC v5 配置参数与实战</a></li>
+    <li><a href="#三-hysteria-2-与-tuic-怎么选">三、 Hysteria 2 与 TUIC 怎么选？</a></li>
+  </ul>
+</nav></aside><div class="article-content"><p>随着 HTTP/3 的大面积普及，UDP / QUIC 协议在现代互联网流量中的占比逐年上升。<strong>TUIC</strong> 是基于 QUIC 协议（RFC 9000）深度定制的高性能代理协议。在 v5 版本发布后，TUIC 进一步优化了握手时延与多路复用性能，成为了继 Hysteria 之后又一款备受瞩目的 UDP 代理利器。</p>
+<h2 id="一-tuic-协议核心黑科技">一、 TUIC 协议核心黑科技</h2>
+<p>为什么 TUIC 能够在弱网环境下实现极低的访问延迟？这归功于 QUIC 协议带来的底层红利：</p>
+<ol>
+<li><strong>0-RTT 极速连接建立</strong>：
+<ul>
+<li>传统的 TCP + TLS 代理需要 2 到 3 个 RTT 才能完成 TCP 三次握手与 TLS 密钥协商。</li>
+<li>TUIC 在重连时支持 0-RTT 快速开局，在点击网页或发起请求的瞬间即可完成数据发送，首包延迟大幅降低。</li>
+</ul>
+</li>
+<li><strong>连接迁移（Connection Migration）</strong>：
+<ul>
+<li>手机在 Wi-Fi 与 5G 移动网络之间切换时，传统的 TCP 代理会直接断开并重新建立 Socket。</li>
+<li>TUIC 依靠 QUIC 的 Connection ID 机制，在 IP 地址与网络环境发生变更时，底层代理连接完全不中断。</li>
+</ul>
+</li>
+<li><strong>彻底消灭队头阻塞（Head-of-Line Blocking）</strong>：
+<ul>
+<li>TUIC 的每个流在 QUIC 中相互独立，单个数据包丢失绝不影响其他并发请求。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-tuic-v5-配置参数与实战">二、 TUIC v5 配置参数与实战</h2>
+<p>客户端配置片段（Clash Meta / Sing-box 规范）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">proxies</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;TUIC-Node&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">tuic</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">your_server_domain</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">8443</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">uuid</span>: <span style="color:#ae81ff">your-tuic-uuid</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">password</span>: <span style="color:#ae81ff">your-tuic-password</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">alpn</span>: [<span style="color:#ae81ff">h3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">congestion-controller</span>: <span style="color:#ae81ff">bbr</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">udp-relay-mode</span>: <span style="color:#ae81ff">native</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">reduce-rtt</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h2 id="三-hysteria-2-与-tuic-怎么选">三、 Hysteria 2 与 TUIC 怎么选？</h2>
+<ul>
+<li><strong>Hysteria 2</strong>：采用暴力的 Brutal 算法，核心目标是“跑满带宽”。适合线路丢包严重、质量较差、追求视频极速缓冲的场景。</li>
+<li><strong>TUIC</strong>：侧重于原生 QUIC 拥塞控制（如 BBR）与低延迟。适合网页秒开、实时交互、游戏联机以及移动设备频繁移动切换网络的场景。</li>
+</ul>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

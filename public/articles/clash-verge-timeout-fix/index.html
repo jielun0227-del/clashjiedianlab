@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash Verge 节点全部超时：10 分钟定位订阅、DNS 与 TUN 冲突 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="Clash Verge 节点全部超时的完整排查清单：从订阅有效性、系统代理、端口占用到 DNS 和 TUN 模式逐项定位。">
+  <link rel="canonical" href="https://clashjiedianlab.com/articles/clash-verge-timeout-fix/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-10\",\"datePublished\":\"2026-10-10\",\"description\":\"Clash Verge 节点全部超时的完整排查清单：从订阅有效性、系统代理、端口占用到 DNS 和 TUN 模式逐项定位。\",\"headline\":\"Clash Verge 节点全部超时：10 分钟定位订阅、DNS 与 TUN 冲突\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/articles/clash-verge-timeout-fix/\"}"</script><script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"不建议先换节点。应先确认订阅是否更新、系统代理是否开启、端口是否被占用，以及客户端日志中的 DNS/TLS 错误。\"},\"name\":\"Clash Verge 所有节点都超时，先换节点吗？\"},{\"@type\":\"Question\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"通常说明 TUN 路由、虚拟网卡、DNS 或其他网络过滤软件存在冲突，应逐项关闭冲突组件并重新启用。\"},\"name\":\"关闭 TUN 后浏览器恢复正常说明什么？\"}]}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">ARTICLES / FIELD NOTE</p><h1>Clash Verge 节点全部超时：10 分钟定位订阅、DNS 与 TUN 冲突</h1><div class="article-meta"><time>更新于 2026 年 10 月 10 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div><div class="tested-note"><strong>测试说明</strong><span>步骤适用于 Clash Verge Rev 常见桌面环境；不同版本的菜单名称可能略有差异。</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-先分离客户端问题与线路问题">1. 先分离客户端问题与线路问题</a></li>
+    <li><a href="#2-逐项执行检查">2. 逐项执行检查</a></li>
+    <li><a href="#3-什么时候才需要更换服务商">3. 什么时候才需要更换服务商</a></li>
+  </ul>
+</nav></aside><div class="article-content"><h2 id="1-先分离客户端问题与线路问题">1. 先分离客户端问题与线路问题</h2>
+<p>打开客户端日志，记录失败类型：</p>
+<table>
+	<thead>
+			<tr>
+					<th>现象</th>
+					<th>优先检查</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>所有节点同时超时</td>
+					<td>系统代理、端口、DNS、订阅有效期</td>
+			</tr>
+			<tr>
+					<td>只有一个地区超时</td>
+					<td>节点状态或上游线路</td>
+			</tr>
+			<tr>
+					<td>浏览器能用，应用不能用</td>
+					<td>TUN 或应用代理支持</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="2-逐项执行检查">2. 逐项执行检查</h2>
+<ol>
+<li>手动更新订阅，确认更新时间和节点数量变化。</li>
+<li>确认系统代理指向客户端显示的 HTTP/SOCKS 端口。</li>
+<li>关闭其他 VPN、加速器和抓包工具，排除端口抢占。</li>
+<li>暂时关闭 TUN 测试浏览器，再决定是否重新启用。</li>
+<li>切换 DNS 后重启客户端，避免旧缓存继续生效。</li>
+</ol>
+<h2 id="3-什么时候才需要更换服务商">3. 什么时候才需要更换服务商</h2>
+<p>如果订阅有效、端口和 DNS 正常，且多个网络环境都无法连接，才把问题归因到上游节点。此时可以用 <strong><a href="%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D">{{快狸}}</a></strong> 的同地区节点做对照，并保留客户端日志，不要仅凭一次测速下结论。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

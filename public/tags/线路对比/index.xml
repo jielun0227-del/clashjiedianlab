@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>线路对比 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E7%BA%BF%E8%B7%AF%E5%AF%B9%E6%AF%94/</link>
+		<description>Recent content in 线路对比 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E7%BA%BF%E8%B7%AF%E5%AF%B9%E6%AF%94/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>专线、中转、直连有什么区别</title>
+				<link>https://clashjiedianlab.com/faq/zhuanxian-zhongzhuan-zhilian/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/faq/zhuanxian-zhongzhuan-zhilian/</guid>
+				<description>&lt;h1 id=&#34;专线中转直连有什么区别&#34;&gt;专线、中转、直连有什么区别&lt;/h1&gt;&#xA;&lt;p&gt;线路质量是决定机场价格与体验最根本的因素，主要分为以下三类：&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;线路类型对比表&#34;&gt;线路类型对比表&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;线路类型&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;传输原理&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;优点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;缺点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;适用场景&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;IPLC / IEPL 专线&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;租用企业级跨境内网专线，数据不过公网防火墙&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;零丢包、超低延迟、极稳、免受敏感时期封锁&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;成本高昂，流量价格相对较贵&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;游戏加速、跨国办公、高端流媒体&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;BGP 隧道中转&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;国内多线 BGP 机房入口，通过加密隧道转发给海外落地&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;晚高峰抗拥堵能力强，性价比极高&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;特殊时期入口受影响时可能微调&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;绝大多数主力加速需求&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;公网直连&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;客户端直接连海外 VPS 服务器，全程走公网&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;价格极其便宜&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;晚高峰拥堵严重，IP 极易封锁&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;备用应急、低预算轻度浏览&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://clashjiedianlab.com/faq/&#34;&gt;点击返回 FAQ 首页&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>DNS防污染 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/dns%E9%98%B2%E6%B1%A1%E6%9F%93/</link>
+		<description>Recent content in DNS防污染 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/dns%E9%98%B2%E6%B1%A1%E6%9F%93/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>OpenWrt 科学上网全家桶实操：PassWall 与 OpenClash 双栈配置与 DNS 防污染</title>
+				<link>https://clashjiedianlab.com/docs/openwrt-passwall-clash-guide/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/openwrt-passwall-clash-guide/</guid>
+				<description>&lt;p&gt;在 OpenWrt 软路由上部署科学上网时，正确的 &lt;strong&gt;DNS 架构设计与插件防分流配置&lt;/strong&gt; 是保证连接顺畅的关键。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-软路由-dns-防污染核心架构设计&#34;&gt;一、 软路由 DNS 防污染核心架构设计&lt;/h2&gt;&#xA;&lt;p&gt;推荐采用 &lt;strong&gt;Fake-IP + 分流 DNS&lt;/strong&gt; 架构：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;国内域名：送入阿里/腾讯 DNS (223.5.5.5) 直连解析；&lt;/li&gt;&#xA;&lt;li&gt;海外域名：由 PassWall / OpenClash 内置 DNS 在本地响应 Fake-IP，或通过代理节点加密解析，彻底杜绝污染。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;二-实操避坑指南&#34;&gt;二、 实操避坑指南&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;旁路由 DNS 设定&lt;/strong&gt;：旁路由网关与 DNS 需在主路由 DHCP 中正确指向。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;IPv6 泄漏防御&lt;/strong&gt;：建议在软路由中关闭 IPv6 复合解析或开启禁用 IPv6 代理，防止 IPv6 绕过代理直连暴露真实 IP。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;遵循以上原则，你的 OpenWrt 软路由将持续稳定地为全屋设备提供高品质加速服务。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

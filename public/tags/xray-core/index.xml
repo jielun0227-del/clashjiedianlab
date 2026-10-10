@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Xray-Core on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/xray-core/</link>
+		<description>Recent content in Xray-Core on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/xray-core/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>VLESS 协议深度剖析：从 XTLS 到 Vision 架构流控演进</title>
+				<link>https://clashjiedianlab.com/docs/vless-protocol-deep-dive/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/vless-protocol-deep-dive/</guid>
+				<description>&lt;p&gt;在 Project V 与 Xray-core 的演进谱系中，&lt;strong&gt;VLESS 协议&lt;/strong&gt;的出现标志着代理传输协议迈入了“轻量化与极致性能”的新时代。相较于包含冗余二次加密的经典 VMess 协议，VLESS 取消了服务端强力的二次对称加密，转而依托内嵌的 TLS / REALITY 保证传输安全。本文将深度剖析 VLESS 的报文结构、XTLS 零拷贝黑科技及其核心流控（Flow）算法演进。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-vless-协议设计哲学为什么消灭二次加密&#34;&gt;一、 VLESS 协议设计哲学：为什么消灭二次加密？&lt;/h2&gt;&#xA;&lt;p&gt;在经典的 &lt;code&gt;VMess over TLS&lt;/code&gt; 传输链路上，数据实际上经历了两次加密与两次解密：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;客户端用 AES-128-GCM 加密 VMess 报文；&lt;/li&gt;&#xA;&lt;li&gt;TLS 协议层再用 TLS 密钥加密整个数据流。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这种双重加密在早年网络设备性能较低时构成了极大的 CPU 负担。VLESS 协议做出了重大创新：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;无状态（Stateless）&lt;/strong&gt;：服务端无需在内存中维护复杂的会话状态。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;免二次加密（Lightweight）&lt;/strong&gt;：VLESS 本身只负责带上简单的认证 Header（UUID）和目标地址，加密工作完全交由外层的标准 TLS / REALITY 完成，整体传输效率提升了 30% 以上。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;二-流控演进史从-xtls-到-vision&#34;&gt;二、 流控演进史：从 XTLS 到 Vision&lt;/h2&gt;&#xA;&lt;p&gt;为了消除 TLS 内嵌入代理流量时产生的双重握手特征，Xray 团队历经了数代流控算法的迭代：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;经典 XTLS&lt;/strong&gt;：XTLS 最初通过识别代理内部 TLS 流量的 Client Hello，在握手完成后直接让代理内核将原始数据包跳过二次封装，直接在 Socket 间复制数据，CPU 占用率急剧下降。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;最新 Vision 流控 (xtls-rprx-vision)&lt;/strong&gt;：通过在连接建立的前几个数据包中注入随机长度的 Padding 混淆，破坏了固定长度的握手特征，同时保留了高效传输特性。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;配置示例（Xray 客户端）：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

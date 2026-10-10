@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="article shell" style="max-width: 900px; margin: 0 auto; padding-top: 60px; padding-bottom: 100px;">
+  <div class="breadcrumbs" style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 6px;">
+    <a href="{{ "/" | relURL }}" style="color: inherit; text-decoration: none;">首页</a>
+    <span>&rsaquo;</span>
+    <span style="color: var(--ink);">{{ .Title }}</span>
+  </div>
+  
+  <header class="article-header" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--line); padding-bottom: 2rem; max-width: 100%;">
+    <h1 style="font-size: clamp(32px, 4vw, 46px); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); margin: 0;">{{ .Title }}</h1>
+  </header>
+  
+  <div class="article-body" style="max-width: 100%; font-size: 1.05rem; line-height: 1.85; color: #2c3e3a;">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

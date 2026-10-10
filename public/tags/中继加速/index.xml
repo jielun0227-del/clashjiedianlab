@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>中继加速 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E4%B8%AD%E7%BB%A7%E5%8A%A0%E9%80%9F/</link>
+		<description>Recent content in 中继加速 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E4%B8%AD%E7%BB%A7%E5%8A%A0%E9%80%9F/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>BGP 中转节点原理拆解：入口优化、多线动态路由与晚高峰抗压</title>
+				<link>https://clashjiedianlab.com/docs/bgp-relay-nodes/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/bgp-relay-nodes/</guid>
+				<description>&lt;p&gt;在评价一家机场服务的综合实力时，“入口质量”与“是否采用 BGP 中转”是至关重要的两个技术指标。相较于用户直接连接海外 VPS 的直连节点，&lt;strong&gt;BGP 中转节点&lt;/strong&gt;通过在国内骨干网枢纽部署高性能中转服务器，极大地提升了晚高峰期间的网络流畅度。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-为什么直连节点晚高峰容易丢包&#34;&gt;一、 为什么直连节点晚高峰容易丢包？&lt;/h2&gt;&#xA;&lt;p&gt;用户从家里上网访问海外节点，数据包的传输经历了两个阶段：国内段与国际段。在晚上 20:00 - 23:00 的晚高峰时段，国内出口局与跨国光缆带宽会发生严重的物理拥塞。不同运营商之间的跨网互联时延会剧烈飙升，丢包率往往突破 30%。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二-bgp-中转节点如何破局&#34;&gt;二、 BGP 中转节点如何破局？&lt;/h2&gt;&#xA;&lt;p&gt;BGP（边界网关协议）中转机制在传输链路上引入了国内优质入口节点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;多线智能接入（BGP 多入口）&lt;/strong&gt;：BGP 中转服务器同时接入了中国电信、中国联通、中国移动等多条骨干网线路。电信用户接入电信入口，移动用户接入移动入口，彻底消灭跨网互联延迟。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;优质出口与隧道加密&lt;/strong&gt;：中转服务器与海外落地节点之间建立高速隧道。中转机通常部署在离出口局极近的机房，拥有更高的 QoS 优先等级，大幅降低了晚高峰丢包。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;三-bgp-中转-vs-iplc-专线&#34;&gt;三、 BGP 中转 vs IPLC 专线&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;传输路径&lt;/strong&gt;：BGP 公网中转走“入口 -&amp;gt; 公网隧道 -&amp;gt; 海外”；IPLC 专线走“入口 -&amp;gt; 物理内网光纤 -&amp;gt; 海外”。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GFW 隔离&lt;/strong&gt;：BGP 经过 GFW 审查；IPLC 专线完全不过 GFW 审查。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;性价比&lt;/strong&gt;：BGP 中转流量单价更便宜，性价比极高。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;对于绝大多数追求性价比与高清流媒体观看的用户而言，优质的 BGP 中转节点是性价比极高的网络加速方案。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>海外资讯 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E6%B5%B7%E5%A4%96%E8%B5%84%E8%AE%AF/</link>
+		<description>Recent content in 海外资讯 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E6%B5%B7%E5%A4%96%E8%B5%84%E8%AE%AF/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>海外资讯获取与 RSS 聚合订阅指南：打破信息茧房与高效科技资讯跟进</title>
+				<link>https://clashjiedianlab.com/articles/overseas-news-access/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/overseas-news-access/</guid>
+				<description>&lt;p&gt;在信息爆炸的数字时代，“信息差”就是生产力。对于科研人员、投资人、程序员以及跨境从业者而言，第一时间获取海外原汁原味的科技突破、金融市场动态以及行业趋势报告至关重要。然而，许多人由于缺乏有效的信息获取途径与网络配置，往往沦落为二手翻译信息的被动接收者。如何打破信息茧房，搭建一套高效的 &lt;strong&gt;海外资讯获取与 RSS 聚合订阅系统&lt;/strong&gt;？本文将为你深度拆解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-为什么你需要直接获取海外一手资讯&#34;&gt;一、 为什么你需要直接获取海外一手资讯？&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;消除二手信息的时间差与误读&lt;/strong&gt;：翻译引进的科技新闻往往滞后数小时甚至数天，且部分译文存在主观裁切或专业术语误译。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;追踪最前沿的开源社区与论文预印本&lt;/strong&gt;：如 arXiv、HuggingFace、GitHub Trending 以及 TechCrunch，是观察全球 AI 与科技趋势的最佳源头。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-打造高效率海外资讯获取系统&#34;&gt;二、 打造高效率海外资讯获取系统&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-使用-rss-聚合器inoreader--miniflux--netnewswire&#34;&gt;1. 使用 RSS 聚合器（Inoreader / Miniflux / NetNewsWire）&lt;/h3&gt;&#xA;&lt;p&gt;RSS 允许你将分散在各个网站（如 Bloomberg、The Verge、Hacker News、Medium）的更新集中呈现在一个洁净的阅读器中：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;推荐阅读器&lt;/strong&gt;：Inoreader（功能强大，支持规则过滤）、Miniflux（开源自建）、Reeder for Mac/iOS。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-精选优质海外资讯源推荐&#34;&gt;2. 精选优质海外资讯源推荐&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;硬核科技与 AI 进展&lt;/strong&gt;：TechCrunch、Wired、Ars Technica、Hacker News (&lt;code&gt;news.ycombinator.com&lt;/code&gt;)；&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;金融与商业洞察&lt;/strong&gt;：Bloomberg、Financial Times、Wall Street Journal、CNBC；&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;开发者与设计趋势&lt;/strong&gt;：Dev.to、Product Hunt、Smashing Magazine。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;三-资讯工具的网络分流优化&#34;&gt;三、 资讯工具的网络分流优化&lt;/h2&gt;&#xA;&lt;p&gt;在代理客户端中，将 RSS 阅读器与资讯站点的域名划入快速代理组，确保长文章与高清图片的秒级加载：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;rules&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,inoreader.com,资讯专用节点&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,feedly.com,资讯专用节点&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,ycombinator.com,资讯专用节点&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,medium.com,资讯专用节点&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;构建独立掌控的信息获取渠道，助你在纷繁复杂的网络世界中保持敏锐洞察，掌握主动权。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

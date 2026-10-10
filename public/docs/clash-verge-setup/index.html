@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clash Verge Rev 配置教程：订阅导入、规则分流与 TUN 模式 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="Clash Verge Rev Windows/macOS 配置教程，覆盖官方下载、订阅导入、规则组、TUN 模式和常见报错排查。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/clash-verge-setup/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-08\",\"datePublished\":\"2026-10-08\",\"description\":\"Clash Verge Rev Windows/macOS 配置教程，覆盖官方下载、订阅导入、规则组、TUN 模式和常见报错排查。\",\"headline\":\"Clash Verge Rev 配置教程：订阅导入、规则分流与 TUN 模式\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/clash-verge-setup/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>Clash Verge Rev 配置教程：订阅导入、规则分流与 TUN 模式</h1><div class="article-meta"><time>更新于 2026 年 10 月 08 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-安装与权限">1. 安装与权限</a></li>
+    <li><a href="#2-导入订阅">2. 导入订阅</a></li>
+    <li><a href="#3-tun-模式与分流">3. TUN 模式与分流</a></li>
+    <li><a href="#常见排错">常见排错</a></li>
+  </ul>
+</nav></aside><div class="article-content"><blockquote>
+<p><strong>适用范围</strong>：本文面向 Windows 10/11 和 macOS 用户。请只从项目 Release 页面获取安装包，并核对发布来源。</p>
+</blockquote>
+<p>需要比较订阅线路时，可回到<a href="/recommend/best-dedicated-airports-review-2026/">2026 年度最佳专线机场综合横评</a>，查看统一的晚高峰测试标准。</p>
+<h2 id="1-安装与权限">1. 安装与权限</h2>
+<p>安装后启动客户端，在系统代理提示出现时允许其创建本地代理端口。若启用 TUN，需按系统提示授予网络扩展或管理员权限。</p>
+<h2 id="2-导入订阅">2. 导入订阅</h2>
+<ol>
+<li>打开 <strong>订阅</strong> 页面并粘贴订阅地址。</li>
+<li>点击更新，确认配置文件能显示节点数量和更新时间。</li>
+<li>在 <strong>代理</strong> 页面选择策略组，再打开系统代理。</li>
+</ol>
+<blockquote>
+<p><strong>推荐节点</strong>：如果订阅更新超时或晚高峰丢包明显，可以试用 <strong><a href="%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D">{{快狸}}</a></strong>，将订阅链接导入同一个客户端后，用延迟和实际访问结果对比。优惠码：<code>{{kl888}}</code>。</p>
+</blockquote>
+<h2 id="3-tun-模式与分流">3. TUN 模式与分流</h2>
+<p>TUN 适合需要接管非浏览器流量的应用。启用前先确认 DNS 设置和绕过局域网规则，避免影响打印机、NAS 或公司内网。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">dns</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enhanced-mode</span>: <span style="color:#ae81ff">fake-ip</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mode</span>: <span style="color:#ae81ff">rule</span>
+</span></span></code></pre></div><h2 id="常见排错">常见排错</h2>
+<ul>
+<li>订阅为空：检查链接是否过期，并确认客户端可访问订阅域名。</li>
+<li>浏览器能用、桌面应用不能用：确认是否需要 TUN，或为应用设置系统代理。</li>
+<li>国内站点变慢：检查规则集是否将国内域名错误送入代理。</li>
+</ul>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

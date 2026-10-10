@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>多设备连接 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E8%BF%9E%E6%8E%A5/</link>
+		<description>Recent content in 多设备连接 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E5%A4%9A%E8%AE%BE%E5%A4%87%E8%BF%9E%E6%8E%A5/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>机场账号能共享吗</title>
+				<link>https://clashjiedianlab.com/faq/zhanghao-gongxiang/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/faq/zhanghao-gongxiang/</guid>
+				<description>&lt;h1 id=&#34;机场账号能共享吗&#34;&gt;机场账号能共享吗&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-个人多设备使用&#34;&gt;1. 个人多设备使用&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;完全可以&lt;/strong&gt;。大部分机场支持同一个订阅链接在个人的手机、电脑、iPad 及软路由上同时使用。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-与他人合租共享&#34;&gt;2. 与他人合租共享&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;在线设备数限制 (IP/Device Limit)&lt;/strong&gt;：套餐通常有限制同时在线公网 IP 数量（如 2 设备、5 设备或 10 设备）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;封号风险&lt;/strong&gt;：如果把订阅分享给多人导致异地公网 IP 数量超限，系统的风控策略会自动触发短暂断连或&lt;strong&gt;封禁账号&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://clashjiedianlab.com/faq/&#34;&gt;点击返回 FAQ 首页&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mac 苹果电脑机场节点配置指南：Clash Verge 与 Surge 全面解析 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="macOS 平台主流代理客户端 Clash Verge Rev、Surge Mac 与 Sing-box 配置对比与优化。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/mac-airport-clash/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-09\",\"datePublished\":\"2026-10-09\",\"description\":\"macOS 平台主流代理客户端 Clash Verge Rev、Surge Mac 与 Sing-box 配置对比与优化。\",\"headline\":\"Mac 苹果电脑机场节点配置指南：Clash Verge 与 Surge 全面解析\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/mac-airport-clash/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>Mac 苹果电脑机场节点配置指南：Clash Verge 与 Surge 全面解析</h1><div class="article-meta"><time>更新于 2026 年 10 月 09 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-macos-平台三大代理软件对比">一、 macOS 平台三大代理软件对比</a></li>
+    <li><a href="#二-macos-终端terminal与-docker-代理配置">二、 macOS 终端（Terminal）与 Docker 代理配置</a>
+      <ul>
+        <li><a href="#1-终端临时代理配置">1. 终端临时代理配置</a></li>
+        <li><a href="#2-终端永久快捷命令zshrc-配置">2. 终端永久快捷命令（zshrc 配置）</a></li>
+        <li><a href="#3-使用-tun--enhanced-mode-实现一劳永逸">3. 使用 TUN / Enhanced Mode 实现一劳永逸</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-针对-apple-架构的性能调优">三、 针对 Apple 架构的性能调优</a></li>
+  </ul>
+</nav></aside><div class="article-content"><p>macOS 作为高端生产力工具，对网络连接的稳定性、延迟以及应用兼容性有着极高的要求。开发者、设计师与跨境从业者在 Mac 上频繁使用 Terminal（终端）、Docker、Xcode 以及各类海外 API。如何在 macOS 环境下搭建高可用、无感分流的代理加速体系？本文将为你详细剖析 macOS 主流客户端选型与配置实战。</p>
+<h2 id="一-macos-平台三大代理软件对比">一、 macOS 平台三大代理软件对比</h2>
+<p>在 macOS 生态中，客户端的选择直接决定了开发环境与日常浏览的体验：</p>
+<ol>
+<li><strong>Clash Verge Rev for Mac</strong>：目前 Mac 上性价比最高、最受欢迎的开源客户端。全面适配 Apple Silicon（M1/M2/M3/M4）芯片，完美支持 Clash Meta 内核与 TUN 增强模式。</li>
+<li><strong>Surge for Mac</strong>：macOS 平台上的“终极网络工具”。拥有顶级性能、极其强大的抓包分析能力、网关模式（Enhanced Mode）以及无与伦比的 UI 质感。虽然价格昂贵，但对于专业开发者而言物有所值。</li>
+<li><strong>Sing-box for macOS</strong>：官方原生客户端，支持系统 App Store 直接安装。极致轻量化，对系统内存与 CPU 开销极小。</li>
+</ol>
+<h2 id="二-macos-终端terminal与-docker-代理配置">二、 macOS 终端（Terminal）与 Docker 代理配置</h2>
+<p>普通用户开启客户端“系统代理”后，Safari 与 Chrome 可以正常上网，但 Mac 的终端（zsh/bash）和 Docker 默认不会走 HTTP 代理。这是很多开发者遇到的最大痛点。</p>
+<h3 id="1-终端临时代理配置">1. 终端临时代理配置</h3>
+<p>在终端中执行以下命令，将当前 Shell 窗口的流量临时定向至本地代理端口：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://127.0.0.1:7897&#34;</span>
+</span></span><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://127.0.0.1:7897&#34;</span>
+</span></span><span style="display:flex;"><span>export all_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;socks5://127.0.0.1:7890&#34;</span>
+</span></span></code></pre></div><h3 id="2-终端永久快捷命令zshrc-配置">2. 终端永久快捷命令（zshrc 配置）</h3>
+<p>编辑 <code>~/.zshrc</code> 文件，添加如下别名：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;export http_proxy=http://127.0.0.1:7897 https_proxy=http://127.0.0.1:7897 ALL_PROXY=socks5://127.0.0.1:7890; echo &#39;Proxy ON&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>alias unproxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unset http_proxy https_proxy ALL_PROXY; echo &#39;Proxy OFF&#39;&#34;</span>
+</span></span></code></pre></div><p>保存后运行 <code>source ~/.zshrc</code>，后续在终端只需输入 <code>proxy</code> 即可一键开启代理，输入 <code>unproxy</code> 关闭代理。</p>
+<h3 id="3-使用-tun--enhanced-mode-实现一劳永逸">3. 使用 TUN / Enhanced Mode 实现一劳永逸</h3>
+<p>在 Clash Verge Rev 中开启 TUN Mode 或在 Surge 中开启 Enhanced Mode。系统将直接接管网卡层面的所有 TCP/UDP 流量，无论是 <code>git clone</code>、<code>curl</code>、<code>npm install</code> 还是 Docker 镜像拉取，均无需手动设置任何环境变量即可自动代理。</p>
+<h2 id="三-针对-apple-架构的性能调优">三、 针对 Apple 架构的性能调优</h2>
+<ol>
+<li><strong>架构原生适配（Apple Silicon）</strong>：确保下载的客户端安装包为 <code>arm64</code> 架构，而非通过 Rosetta 2 转译运行的 <code>x86_64</code> 版本，以获得最低的功耗与发热。</li>
+<li><strong>DNS 防污染与 DNS Over HTTPS (DoH)</strong>：在 macOS 客户端中配置上游 DoH 服务器，防止 DNS 污染导致域名解析失败。</li>
+</ol>
+<p>通过灵活运用 TUN 模式与终端环境变量设置，Mac 能够轻松打造出顺畅、无感的全场景网络开发与娱乐环境。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

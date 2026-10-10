@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>深度测评 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/categories/%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%84/</link>
+		<description>Recent content in 深度测评 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 10:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/categories/%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%84/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>【深度测评】Edgenode (边缘节点) 机场 2026 实测：全球多点分布式架构与高并发算力代理</title>
+				<link>https://clashjiedianlab.com/reviews/edgenode-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/edgenode-review/</guid>
+				<description>Edgenode 机场 2026 深度实测：全球分布式边缘节点架构、智能路由调度与高并发业务稳定性体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】云图机场实测：海外多节点集群与抗封锁动态科研办公专线</title>
+				<link>https://clashjiedianlab.com/reviews/yuntu-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/yuntu-review/</guid>
+				<description>云图 (YunTu) 机场 2026 深度实测：海外多节点集群、动态抗封锁优化与科研/AI 办公专线体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】云界线机场 2026 实测：多入口 Anycast 部署与全平台无缝衔接</title>
+				<link>https://clashjiedianlab.com/reviews/yunjiexian-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/yunjiexian-review/</guid>
+				<description>云界线 (YunJieXian) 机场 2026 深度实测：分布式入口、智能负载均衡与高性价比接入体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】光年梯机场实测：零门槛一键订阅与不限时按量计费套餐</title>
+				<link>https://clashjiedianlab.com/reviews/guangnianti-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/guangnianti-review/</guid>
+				<description>光年梯 (GuangNianTi) 机场 2026 实测：小白友好型极简配置、不限时按量计费套餐与多端一键导入体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】可信云机场实测：老牌安全无日志防护与自动 Failover 容灾</title>
+				<link>https://clashjiedianlab.com/reviews/kexinyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/kexinyun-review/</guid>
+				<description>可信云 (KeXinYun) 机场 2026 深度实测：严格的无日志隐私保护、自动 Failover 故障容灾与低延迟体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】大佬云机场 2026 实测：高性价比大流量与极速中继体验</title>
+				<link>https://clashjiedianlab.com/reviews/dalaoyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/dalaoyun-review/</guid>
+				<description>大佬云 (DaLaoYun) 机场 2026 深度实测：超高性价比、大流量配额与稳定中继隧道表现。</description>
+			</item>
+			<item>
+				<title>【深度测评】极联云机场 2026 实测：BGP 多线中转与性价比之王</title>
+				<link>https://clashjiedianlab.com/reviews/jilianyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/jilianyun-review/</guid>
+				<description>极联云 (JiLianYun) 机场 2026 深度实测：BGP 多线入口、智能负载均衡与极高性价比套餐体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】榴莲云机场 2026 实测：小白友好型极简配置与不限时包</title>
+				<link>https://clashjiedianlab.com/reviews/liulianyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/liulianyun-review/</guid>
+				<description>榴莲云 (LiuLianYun) 机场 2026 深度实测：新手零门槛一键导入、不限时按量计费与稳定传输。</description>
+			</item>
+			<item>
+				<title>【深度测评】环球梯机场 2026 实测：多国原生 IP 节点与跨境商务加速</title>
+				<link>https://clashjiedianlab.com/reviews/huanqiuti-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/huanqiuti-review/</guid>
+				<description>环球梯 (HuanQiuTi) 机场 2026 深度实测：全球多国原生 IP、商务办公优化与超高清流媒体加速。</description>
+			</item>
+			<item>
+				<title>【深度测评】瞬云机场 2026 实测：高吞吐 IPLC 专线与全端低延迟表现</title>
+				<link>https://clashjiedianlab.com/reviews/shunyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shunyun-review/</guid>
+				<description>瞬云 (ShunYun) 机场 2026 深度实测：IPLC 专线拓扑、晚高峰丢包控制与流媒体全量解锁体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】神行加速 2026 实测：电竞级低延迟与全节点 Failover 容灾</title>
+				<link>https://clashjiedianlab.com/reviews/shenxing-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shenxing-review/</guid>
+				<description>神行加速 2026 深度实测：低延迟电竞加速专线、自动容灾与全流媒体原生解锁。</description>
+			</item>
+			<item>
+				<title>【深度测评】速捷机场 2026 实测：极速 IPLC 专线架构与晚高峰无卡顿极致体验</title>
+				<link>https://clashjiedianlab.com/reviews/sujie-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/sujie-review/</guid>
+				<description>速捷机场 2026 深度实测：深港/沪日 IPLC 内网专线架构，晚高峰 8K 视频秒开与低延迟游戏体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】闪电鼠机场 2026 实测：极速 IPLC 专线与晚高峰无感知加速</title>
+				<link>https://clashjiedianlab.com/reviews/shandianshu-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shandianshu-review/</guid>
+				<description>闪电鼠 (ShanDianShu) 机场 2026 深度实测：高端 IPLC 专线架构、8K 超高清秒开与极致稳定性。</description>
+			</item>
+			<item>
+				<title>【深度测评】闪跃机场 2026 实测：抗封锁动态协议与极速影音体验</title>
+				<link>https://clashjiedianlab.com/reviews/shanyue-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shanyue-review/</guid>
+				<description>闪跃 (FlashLeap) 机场 2026 深度实测：新一代抗封锁协议、动态分流与晚高峰 4K/8K 秒开。</description>
+			</item>
+			<item>
+				<title>【深度测评】鲲鹏加速 2026 实测：企业级 BGP 中转与高并发流量方案</title>
+				<link>https://clashjiedianlab.com/reviews/kunpeng-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/kunpeng-review/</guid>
+				<description>鲲鹏加速 2026 深度实测：企业级 BGP 多线入口、高并发连接保障与性价比流量套餐。</description>
+			</item>
+			<item>
+				<title>【深度测评】快狸机场 2026 晚高峰 30 天实测：全 IPLC 专线、8K 秒开与全流媒体解锁</title>
+				<link>https://clashjiedianlab.com/reviews/kuaili-review-2026/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/kuaili-review-2026/</guid>
+				<description>&lt;p&gt;本文将服务商公开资料、待复核指标和独立测试方法分开记录。当前页面不把服务商的线路、解锁或速度宣传直接视为独立结论；发布前应补齐原始采样文件和可复核截图。&lt;/p&gt;&#xA;&lt;p&gt;本页被收录在&lt;a href=&#34;https://clashjiedianlab.com/recommend/best-dedicated-airports-review-2026/&#34;&gt;2026 年度最佳专线机场综合横评&lt;/a&gt;的候选记录中。请先阅读横评的统一测试方法，再解读本页指标。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-基础设施与网络拓扑架构&#34;&gt;一、 基础设施与网络拓扑架构&lt;/h2&gt;&#xA;&lt;p&gt;快狸机场的核心优势在于其物理传输层的硬核投入：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;核心线路拓扑&lt;/strong&gt;：全线采用&lt;strong&gt;深港 IPLC 专线&lt;/strong&gt;与&lt;strong&gt;沪日 IEPL 专线&lt;/strong&gt;。数据包从广州、深圳、上海 BGP 独享机房入口直连，完全绕过 GFW 防火长城公网审查，避免了公网拥塞。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;落地 IP 质素&lt;/strong&gt;：香港、台湾、日本、新加坡及美国落地机房接入当地原生的住宅 ISP（如 HKBN、Hinet、NTT、Comcast），保证 IP 数据库被识别为真实家庭宽带。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;协议支持&lt;/strong&gt;：完美适配 Shadowsocks (AEAD/2022)、VLESS-REALITY、Hysteria 2 及 TUIC v5 协议，支持一键导入 Clash Verge Rev、Shadowrocket、Sing-box 及 Quantumult X。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-晚高峰压测数据2000---2300-连续采样&#34;&gt;二、 晚高峰压测数据（20:00 - 23:00 连续采样）&lt;/h2&gt;&#xA;&lt;p&gt;在晚高峰最拥堵时段，使用千兆电信/移动双栈宽带对快狸节点进行连续压测，实测数据如下：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;测试节点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;平均 Ping 值&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;抖动 (Jitter)&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;晚高峰丢包率&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;单线程下载速率&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;8K 视频缓冲时间&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;香港 IPLC 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;22 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&amp;lt; 1 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.00%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;850 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.4 秒（秒开）&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;日本 IEPL 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;42 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;1.2 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.00%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;780 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.6 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;新加坡专线 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;51 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;1.5 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.01%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;720 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.7 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;美西专线 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;135 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;2.1 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.05%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;650 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.9 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;以上表格为待复核记录模板，不能据此推导长期稳定性。正式结论应同时披露采样脚本、当地运营商、设备、节点 ID 和原始时间序列。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

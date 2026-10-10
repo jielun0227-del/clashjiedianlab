@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>IOS小火箭 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/ios%E5%B0%8F%E7%81%AB%E7%AE%AD/</link>
+		<description>Recent content in IOS小火箭 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/ios%E5%B0%8F%E7%81%AB%E7%AE%AD/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>iOS 小火箭 (Shadowrocket) 进阶教程：规则订阅、证书解锁与自动化</title>
+				<link>https://clashjiedianlab.com/docs/ios-shadowrocket-guide/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/ios-shadowrocket-guide/</guid>
+				<description>&lt;p&gt;在苹果 iOS 生态中，Shadowrocket（俗称“小火箭”）无疑是普及率最高、功能最完善的网络代理与分流客户端。它不仅全面支持 Shadowsocks、VLESS、VMess、Hysteria2、TUIC、Trojan 等主流代理协议，还具备强大的 HTTP/HTTPS 抓包、脚本扩展以及 MitM 解密能力。本文将从基础导入到高级自动化，全方位揭秘小火箭的使用技巧。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-快速上手节点订阅与全局路由设置&#34;&gt;一、 快速上手：节点订阅与全局路由设置&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-订阅导入&#34;&gt;1. 订阅导入&lt;/h3&gt;&#xA;&lt;p&gt;小火箭支持多种高效的节点导入方式：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;一键导入&lt;/strong&gt;：在机场后台点击“导入到 Shadowrocket”，系统会自动唤起小火箭完成添加。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;扫描二维码 / 剪贴板导入&lt;/strong&gt;：打开小火箭，点击右上角 &lt;code&gt;+&lt;/code&gt; 号，类型选择 Subscribe，粘贴订阅链接后点击保存。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;自动更新&lt;/strong&gt;：在“设置 -&amp;gt; 订阅”中开启“打开应用时更新”与“自动更新”，确保节点列表实时同步。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-核心路由模式说明&#34;&gt;2. 核心路由模式说明&lt;/h3&gt;&#xA;&lt;p&gt;小火箭主页的“全局路由”选项决定了系统流量的分流逻辑：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;配置（Config）&lt;/strong&gt;：&lt;strong&gt;推荐使用&lt;/strong&gt;。根据加载的规则文件自动判断流量走直连、代理还是拒绝，实现国内直连、海外代理。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;代理（Proxy）&lt;/strong&gt;：全局代理模式。所有手机流量无论国内海外均经过代理节点。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;直连（Direct）&lt;/strong&gt;：全局直连模式。代理节点失效，所有流量直接访问。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;场景（Scene）&lt;/strong&gt;：根据连接的 Wi-Fi 名称或移动网络自动切换不同的节点与规则。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;二-进阶技巧规则订阅与自定义分流&#34;&gt;二、 进阶技巧：规则订阅与自定义分流&lt;/h2&gt;&#xA;&lt;p&gt;标准默认规则可能无法覆盖所有复杂场景（如特定流媒体分流、ChatGPT 规则重定向）。引入第三方优质规则库能让体验更上一层楼：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;添加第三方规则集&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;切换到小火箭“配置”页面，点击右上角 &lt;code&gt;+&lt;/code&gt;，输入规则链接（如神机规则、ACL4SSR 规则）。&lt;/li&gt;&#xA;&lt;li&gt;下载完成后点击该配置文件并选择“使用配置”。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;手写自定义规则&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在当前配置中点击“添加规则”。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;DOMAIN-SUFFIX&lt;/strong&gt;：域名后缀匹配（如 &lt;code&gt;domain-suffix, openai.com, 节点选择&lt;/code&gt;）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;IP-CIDR&lt;/strong&gt;：IP 段匹配（如 &lt;code&gt;ip-cidr, 192.168.1.0/24, DIRECT&lt;/code&gt;）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GEOIP&lt;/strong&gt;：基于地理位置匹配（如 &lt;code&gt;geoip, cn, DIRECT&lt;/code&gt;）。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;三-高级功能mitm-证书安装与重写脚本&#34;&gt;三、 高级功能：MitM 证书安装与重写脚本&lt;/h2&gt;&#xA;&lt;p&gt;小火箭不仅是代理工具，还具备 HTTPS 中间人解密（MitM）功能，常用于广告拦截与脚本扩展：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;安装 CA 证书&lt;/strong&gt;：在“设置 -&amp;gt; 证书”中点击“生成新的 CA 证书”，再点击“安装证书”跳转至 iOS 系统设置中安装描述文件。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;信任证书&lt;/strong&gt;：进入 iOS “设置 -&amp;gt; 通用 -&amp;gt; 关于本机 -&amp;gt; 证书信任设置”，勾选小火箭生成的根证书信任开关。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;启用 Rewrite（重写）&lt;/strong&gt;：在配置中开启重写功能，可实现特定 App 内测功能开启、网页去广告及 URL 自动重定向。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;四-自动化结合-ios-快捷指令shortcuts&#34;&gt;四、 自动化：结合 iOS 快捷指令（Shortcuts）&lt;/h2&gt;&#xA;&lt;p&gt;为了实现无感使用，可以利用 iOS 系统的“快捷指令”设置自动化开关：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

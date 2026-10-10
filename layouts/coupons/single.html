@@ -1,0 +1,235 @@
+{{ define "main" }}
+<section class="shell" style="max-width: 1000px; margin: 0 auto; padding-top: 60px; padding-bottom: 100px;">
+  <div class="breadcrumbs" style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 6px;">
+    <a href="{{ "/" | relURL }}" style="color: inherit; text-decoration: none;">首页</a>
+    <span>&rsaquo;</span>
+    <span style="color: var(--ink);">机场优惠码</span>
+  </div>
+
+  <header class="page-header" style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.8rem;">
+    <p class="eyebrow" style="font-size: 11px; letter-spacing: 0.18em; color: var(--accent); font-weight: 800; margin: 0 0 10px;">DISCOUNT CODES / 2026</p>
+    <h1 style="font-size: clamp(32px, 4vw, 46px); font-weight: 800; line-height: 1.25; color: var(--ink); margin: 0 0 12px;">最新机场优惠码与折扣券汇总</h1>
+    <p style="color: var(--muted); font-size: 16px; margin: 0;">独家打折优惠码一键复制，结合晚高峰线路实测，即拿即用。</p>
+  </header>
+
+  <div class="coupons-grid">
+    <!-- 1. edgenova 边缘节点 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>edgenova (边缘节点)</h3>
+        </div>
+        <p class="coupon-desc">边缘节点全场 8 折</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('xk808', this)">
+          <span>xk808</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://everett7623.edgenovaaff.cc/#/register?code=tT3McfnN" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 2. 快狸机场 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>快狸机场</h3>
+        </div>
+        <p class="coupon-desc">IEPL 专线特惠折扣</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('kl888', this)">
+          <span>kl888</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 3. 速界机场 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>速界机场</h3>
+        </div>
+        <p class="coupon-desc">Hysteria2 爆速专线折上折</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('sujie888', this)">
+          <span>sujie888</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://lqy001.speedworldaff.com/#/?code=ysM6ozIh" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 4. 极连云 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>极连云</h3>
+        </div>
+        <p class="coupon-desc">BGP 多线高性价比特惠</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('jly888', this)">
+          <span>jly888</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://157935.jlyvipaff.com/#/register?code=Sm7oT61X" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 5. 云图机场 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>云图机场</h3>
+        </div>
+        <p class="coupon-desc">新用户首购折扣优惠</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('yt88', this)">
+          <span>yt88</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://vip.ytjcok.org/#/register?code=Av0K1D4P" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 6. 闪跃机场 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>闪跃机场</h3>
+        </div>
+        <p class="coupon-desc">极速月付体验包优惠</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('kuaili', this)">
+          <span>kuaili</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://jielun0227.flashleapaff.com/#/?code=uyTPETiU" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 7. 光年梯 -->
+    <div class="coupon-card">
+      <div class="coupon-info">
+        <div class="coupon-title">
+          <h3>光年梯</h3>
+        </div>
+        <p class="coupon-desc">不限时按量计费与独家折扣</p>
+      </div>
+      <div class="coupon-action">
+        <button class="copy-btn" onclick="copyCoupon('GNT80', this)">
+          <span>GNT80</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </button>
+        <a class="direct-link" href="https://1579.gntaff.com/#/?code=PzvG9uPl" target="_blank" rel="noopener noreferrer">前往官网 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.coupons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.coupon-card {
+  border: 1px solid var(--line);
+  background: var(--white);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: all 0.25s ease;
+}
+.coupon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-color: #bee1d7;
+}
+.coupon-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.coupon-icon {
+  font-size: 20px;
+}
+.coupon-title h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.coupon-desc {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.coupon-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.copy-btn {
+  border: 1.5px dashed #38a169;
+  background: #f0fff4;
+  color: #276749;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.copy-btn:hover {
+  background: #dcffe4;
+  transform: scale(1.03);
+}
+.copy-btn.copied {
+  background: #38a169;
+  color: #fff;
+  border-style: solid;
+}
+.direct-link {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.direct-link:hover {
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .coupons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+function copyCoupon(code, btn) {
+  navigator.clipboard.writeText(code).then(function() {
+    const originalHTML = btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML = '已复制！';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  });
+}
+</script>
+{{ end }}

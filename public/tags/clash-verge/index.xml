@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Clash Verge on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/clash-verge/</link>
+		<description>Recent content in Clash Verge on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/clash-verge/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Clash Verge 节点全部超时：10 分钟定位订阅、DNS 与 TUN 冲突</title>
+				<link>https://clashjiedianlab.com/articles/clash-verge-timeout-fix/</link>
+				<pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/clash-verge-timeout-fix/</guid>
+				<description>&lt;h2 id=&#34;1-先分离客户端问题与线路问题&#34;&gt;1. 先分离客户端问题与线路问题&lt;/h2&gt;&#xA;&lt;p&gt;打开客户端日志，记录失败类型：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;现象&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;优先检查&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;所有节点同时超时&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;系统代理、端口、DNS、订阅有效期&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;只有一个地区超时&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;节点状态或上游线路&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;浏览器能用，应用不能用&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;TUN 或应用代理支持&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;2-逐项执行检查&#34;&gt;2. 逐项执行检查&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;手动更新订阅，确认更新时间和节点数量变化。&lt;/li&gt;&#xA;&lt;li&gt;确认系统代理指向客户端显示的 HTTP/SOCKS 端口。&lt;/li&gt;&#xA;&lt;li&gt;关闭其他 VPN、加速器和抓包工具，排除端口抢占。&lt;/li&gt;&#xA;&lt;li&gt;暂时关闭 TUN 测试浏览器，再决定是否重新启用。&lt;/li&gt;&#xA;&lt;li&gt;切换 DNS 后重启客户端，避免旧缓存继续生效。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;3-什么时候才需要更换服务商&#34;&gt;3. 什么时候才需要更换服务商&lt;/h2&gt;&#xA;&lt;p&gt;如果订阅有效、端口和 DNS 正常，且多个网络环境都无法连接，才把问题归因到上游节点。此时可以用 &lt;strong&gt;&lt;a href=&#34;%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D&#34;&gt;{{快狸}}&lt;/a&gt;&lt;/strong&gt; 的同地区节点做对照，并保留客户端日志，不要仅凭一次测速下结论。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

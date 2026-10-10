@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Shadowsocks on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/shadowsocks/</link>
+		<description>Recent content in Shadowsocks on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Shadowsocks 与 SSR 专线演进史：从经典 Socks5 协议到现代 AEAD 加密</title>
+				<link>https://clashjiedianlab.com/docs/shadowsocks-ssr-line/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/shadowsocks-ssr-line/</guid>
+				<description>&lt;p&gt;在科学上网的历史长卷中，&lt;strong&gt;Shadowsocks&lt;/strong&gt;（简称 SS）无疑是开创性的一笔。随后经历 SSR（ShadowsocksR）的混淆分流尝试，再到现代 AEAD 加密与 2022 规范的诞生，Shadowsocks 协议至今依然在 IPLC 专线中扮演着极其重要的角色。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-shadowsocks-的协议演进历程&#34;&gt;一、 Shadowsocks 的协议演进历程&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;经典 Shadowsocks（Stream Cipher 时代）&lt;/strong&gt;：早期的 SS 采用流加密（如 AES-256-CFB）。由于缺乏数据完整性校验（MAC），GFW 通过重放攻击能极其精准地定位并封锁 SS 节点。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ShadowsocksR (SSR) 时代&lt;/strong&gt;：加入了 &lt;code&gt;obfs&lt;/code&gt; 伪装混淆与 &lt;code&gt;protocol&lt;/code&gt; 协议插件，试图将代理流量伪装成正常的 HTTPS 或 HTTP 流量。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;AEAD 加密规范（SS-AEAD）&lt;/strong&gt;：引入 AEAD 规范（如 &lt;code&gt;chacha20-ietf-poly1305&lt;/code&gt; 和 &lt;code&gt;aes-256-gcm&lt;/code&gt;），每个数据包包含独立的 Auth Tag，彻底杜绝了主动探测。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Shadowsocks 2022 新规范&lt;/strong&gt;：引入强制性客户端时间戳校验，彻底消灭了固定长度和重放特征。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-为什么-iplc-内网专线首选-shadowsocks&#34;&gt;二、 为什么 IPLC 内网专线首选 Shadowsocks？&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;不过 GFW，无需复杂伪装&lt;/strong&gt;：内网专线运行在运营商内部光纤中，无需应对 DPI 审查，完全不需要带上繁重的 TLS 握手开销。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;极致的吞吐量与超低 CPU 占用&lt;/strong&gt;：SS 的 AEAD/2022 加密算法具备极其优秀的硬件加速支持（AES-NI 指令集）。在专线千兆带宽下，SS 的 CPU 开销仅为 TLS 协议的 1/5，能提供极低的转发延迟。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;总结而言，Shadowsocks 在专线环境中配合 AEAD 加密，依旧是效率与稳定性的代名词。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

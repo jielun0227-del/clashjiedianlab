@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>IPLC/IEPL on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/iplc/iepl/</link>
+		<description>Recent content in IPLC/IEPL on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/iplc/iepl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>IPLC 与 IEPL 内网专线深度科普：原理、延迟优势与避坑指南</title>
+				<link>https://clashjiedianlab.com/docs/iplc-iepl-explained/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/iplc-iepl-explained/</guid>
+				<description>&lt;p&gt;在选择网络加速服务或机场订阅时，“IPLC 专线”与“IEPL 专线”几乎是高稳定、低延迟的代名词。无论是在晚高峰敏感时期，还是在大流量传输场景下，专线节点总能保持极低的丢包率与稳定的 Ping 值。那么，什么是 IPLC/IEPL？它们在物理传输层与逻辑架构上有何区别？本文将为你揭开国际专线的技术面纱。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-概念拆解什么是-iplc-与-iepl&#34;&gt;一、 概念拆解：什么是 IPLC 与 IEPL？&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-iplcinternational-private-leased-circuit国际点对点租用线路&#34;&gt;1. IPLC（International Private Leased Circuit，国际点对点租用线路）&lt;/h3&gt;&#xA;&lt;p&gt;IPLC 是电信运营商向企业客户提供的跨国点对点物理专用通信通道。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;物理架构&lt;/strong&gt;：例如“深港 IPLC”，线路从深圳入口通过海底/陆地光缆直接连接至香港出口，两端均由运营商局端交换机直连。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;最大特点&lt;/strong&gt;：&lt;strong&gt;不经过国家防火长城（GFW）&lt;/strong&gt;。数据包在内网光纤中传输，不受公网拥塞与审查过滤影响。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-ieplinternational-ethernet-private-line国际以太网专线&#34;&gt;2. IEPL（International Ethernet Private Line，国际以太网专线）&lt;/h3&gt;&#xA;&lt;p&gt;IEPL 是基于广域以太网技术打造的二层专线。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;技术优势&lt;/strong&gt;：相比传统 IPLC，IEPL 提供了更高的带宽弹性与以太网接口兼容性，同样完全跨越 GFW 审查。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;延迟性能&lt;/strong&gt;：与 IPLC 处于同一水准，均属于微秒级物理时延优化线路。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;二-专线线路核心优势对比&#34;&gt;二、 专线线路核心优势对比&lt;/h2&gt;&#xA;&lt;p&gt;相比传统的公网直连或普通公网中继，IPLC/IEPL 拥有绝对的物理优势：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;GFW 审查&lt;/strong&gt;：需经公网 DPI 深度检测，易触发封锁；专线则完全不过 GFW，绝不会被墙 IP/封协议。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;晚高峰丢包率&lt;/strong&gt;：普通中继丢包率高；专线丢包率 &amp;lt; 0.1%。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;延迟波动（Jitter）&lt;/strong&gt;：普通中继波动剧烈；专线极其平稳（波动 &amp;lt; 2ms）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;协议兼容性&lt;/strong&gt;：必须采用复杂加密伪装；专线可直接运行原生 SS/SOCKS5，协议开销小。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;三-如何鉴别真假-iplc-专线&#34;&gt;三、 如何鉴别真假 IPLC 专线？&lt;/h2&gt;&#xA;&lt;p&gt;由于专线带宽成本极为昂贵，市场上部分商家使用公网中继冒充 IPLC 专线。以下是鉴定方法：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;路由追踪法（MTR / Traceroute）&lt;/strong&gt;：从国内客户端发起针对专线入口 IP 的 MTR 测试。若数据包在进入入口 IP 后，下一跳直接显示为香港/新加坡私有 IP 或内网网段，且跃迁跳数极少（3-5 跳），则大概率为真专线。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;敏感时期断网测试&lt;/strong&gt;：在特殊敏感时期，公网节点会出现批量红爆或断连，而真正的 IPLC/IEPL 专线由于不经过 GFW，连接稳定度完全不受影响。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;延迟常数验证&lt;/strong&gt;：例如广深到香港的物理光纤延迟理论极限约为 3ms - 5ms。若深港专线物理延迟高过 25ms，则必然绕路到了公网出口。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;总结而言，IPLC/IEPL 专线是追求极致稳定性、游戏低延迟以及敏感时期无感连接的首选方案。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

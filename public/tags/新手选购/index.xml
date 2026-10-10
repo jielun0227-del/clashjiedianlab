@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>新手选购 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E6%96%B0%E6%89%8B%E9%80%89%E8%B4%AD/</link>
+		<description>Recent content in 新手选购 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E6%96%B0%E6%89%8B%E9%80%89%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>新手怎么选机场</title>
+				<link>https://clashjiedianlab.com/faq/xinshou-zenmexuan/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/faq/xinshou-zenmexuan/</guid>
+				<description>&lt;h1 id=&#34;新手怎么选机场&#34;&gt;新手怎么选机场&lt;/h1&gt;&#xA;&lt;p&gt;面对市场上成百上千家机场服务商，新手小白往往无从下手。挑选一家稳定靠谱的机场，建议关注以下 5 个核心维度：&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-看线路类型决定速度与稳定性&#34;&gt;1. 看线路类型（决定速度与稳定性）&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;直连机场&lt;/strong&gt;：价格便宜（几元/月），但晚高峰严重拥堵且 IP 极易被封锁，不建议主力使用。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;BGP 中转机场&lt;/strong&gt;：性价比极高，国内三网 BGP 入口 + 隧道加速，晚高峰速度稳定，适合绝大多数普通用户。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;IPLC / IEPL 专线机场&lt;/strong&gt;：不过公网 GFW 审查，延迟极低、零丢包、抗封锁能力强，适合对网络要求高的用户或企业。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-看协议支持决定兼容性&#34;&gt;2. 看协议支持（决定兼容性）&lt;/h2&gt;&#xA;&lt;p&gt;确保机场支持主流的协议，如 &lt;strong&gt;Shadowsocks (SS)&lt;/strong&gt;、&lt;strong&gt;VLESS / VMess&lt;/strong&gt;、&lt;strong&gt;Hysteria 2&lt;/strong&gt; 或 &lt;strong&gt;TUIC&lt;/strong&gt;。这样无论你使用的是 Windows、macOS、iOS 还是 Android，都能找到适配的客户端。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;3-看售后与客服-sla&#34;&gt;3. 看售后与客服 SLA&lt;/h2&gt;&#xA;&lt;p&gt;观察机场是否有 Telegram 官方沟通群组或工单系统。售后响应迅速的机场即使遇到节点故障也能及时修复。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;4-黄金原则月付与试用&#34;&gt;4. 黄金原则：月付与试用&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;切忌直接购买年付套餐&lt;/strong&gt;：再老的机场也存在线路波动或跑路风险，&lt;strong&gt;逢年付必谨慎，优先月付或季付&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;先测试后付费&lt;/strong&gt;：利用免费试用或购买低价月付体验包，在晚高峰（20:00 - 23:00）实测 4K 视频加载与网页响应情况。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://clashjiedianlab.com/faq/&#34;&gt;点击返回 FAQ 首页&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

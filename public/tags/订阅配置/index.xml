@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>订阅配置 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E8%AE%A2%E9%98%85%E9%85%8D%E7%BD%AE/</link>
+		<description>Recent content in 订阅配置 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E8%AE%A2%E9%98%85%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Clash Verge Rev 配置教程：订阅导入、规则分流与 TUN 模式</title>
+				<link>https://clashjiedianlab.com/articles/clash-verge-rev/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/clash-verge-rev/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;适用范围&lt;/strong&gt;：本文面向 Windows 10/11 和 macOS 用户。请只从项目 Release 页面获取安装包，并核对发布来源。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;1-安装与权限&#34;&gt;1. 安装与权限&lt;/h2&gt;&#xA;&lt;p&gt;安装后启动客户端，在系统代理提示出现时允许其创建本地代理端口。若启用 TUN，需按系统提示授予网络扩展或管理员权限。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-导入订阅&#34;&gt;2. 导入订阅&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;打开 &lt;strong&gt;订阅&lt;/strong&gt; 页面并粘贴订阅地址。&lt;/li&gt;&#xA;&lt;li&gt;点击更新，确认配置文件能显示节点数量和更新时间。&lt;/li&gt;&#xA;&lt;li&gt;在 &lt;strong&gt;代理&lt;/strong&gt; 页面选择策略组，再打开系统代理。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;推荐节点&lt;/strong&gt;：如果订阅更新超时或晚高峰丢包明显，可以试用 &lt;strong&gt;&lt;a href=&#34;https://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm&#34;&gt;快狸&lt;/a&gt;&lt;/strong&gt;，将订阅链接导入同一个客户端后，用延迟和实际访问结果对比。优惠码：&lt;code&gt;kl888&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;3-tun-模式与分流&#34;&gt;3. TUN 模式与分流&lt;/h2&gt;&#xA;&lt;p&gt;TUN 适合需要接管非浏览器流量的应用。启用前先确认 DNS 设置和绕过局域网规则，避免影响打印机、NAS 或公司内网。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;dns&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enable&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enhanced-mode&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;fake-ip&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;mode&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;rule&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见排错&#34;&gt;常见排错&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;订阅为空：检查链接是否过期，并确认客户端可访问订阅域名。&lt;/li&gt;&#xA;&lt;li&gt;浏览器能用、桌面应用不能用：确认是否需要 TUN，或为应用设置系统代理。&lt;/li&gt;&#xA;&lt;li&gt;国内站点变慢：检查规则集是否将国内域名错误送入代理。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Clash Verge Rev 配置教程：订阅导入、规则分流与 TUN 模式</title>
+				<link>https://clashjiedianlab.com/docs/clash-verge-setup/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/clash-verge-setup/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;适用范围&lt;/strong&gt;：本文面向 Windows 10/11 和 macOS 用户。请只从项目 Release 页面获取安装包，并核对发布来源。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;需要比较订阅线路时，可回到&lt;a href=&#34;https://clashjiedianlab.com/recommend/best-dedicated-airports-review-2026/&#34;&gt;2026 年度最佳专线机场综合横评&lt;/a&gt;，查看统一的晚高峰测试标准。&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-安装与权限&#34;&gt;1. 安装与权限&lt;/h2&gt;&#xA;&lt;p&gt;安装后启动客户端，在系统代理提示出现时允许其创建本地代理端口。若启用 TUN，需按系统提示授予网络扩展或管理员权限。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-导入订阅&#34;&gt;2. 导入订阅&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;打开 &lt;strong&gt;订阅&lt;/strong&gt; 页面并粘贴订阅地址。&lt;/li&gt;&#xA;&lt;li&gt;点击更新，确认配置文件能显示节点数量和更新时间。&lt;/li&gt;&#xA;&lt;li&gt;在 &lt;strong&gt;代理&lt;/strong&gt; 页面选择策略组，再打开系统代理。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;推荐节点&lt;/strong&gt;：如果订阅更新超时或晚高峰丢包明显，可以试用 &lt;strong&gt;&lt;a href=&#34;%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D&#34;&gt;{{快狸}}&lt;/a&gt;&lt;/strong&gt;，将订阅链接导入同一个客户端后，用延迟和实际访问结果对比。优惠码：&lt;code&gt;{{kl888}}&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;3-tun-模式与分流&#34;&gt;3. TUN 模式与分流&lt;/h2&gt;&#xA;&lt;p&gt;TUN 适合需要接管非浏览器流量的应用。启用前先确认 DNS 设置和绕过局域网规则，避免影响打印机、NAS 或公司内网。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;dns&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enable&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;enhanced-mode&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;fake-ip&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;mode&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;rule&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见排错&#34;&gt;常见排错&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;订阅为空：检查链接是否过期，并确认客户端可访问订阅域名。&lt;/li&gt;&#xA;&lt;li&gt;浏览器能用、桌面应用不能用：确认是否需要 TUN，或为应用设置系统代理。&lt;/li&gt;&#xA;&lt;li&gt;国内站点变慢：检查规则集是否将国内域名错误送入代理。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

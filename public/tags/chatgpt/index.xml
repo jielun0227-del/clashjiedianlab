@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ChatGPT on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/chatgpt/</link>
+		<description>Recent content in ChatGPT on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>ChatGPT 报错 1020 怎么解决？从 Cloudflare 排查到节点选择</title>
+				<link>https://clashjiedianlab.com/articles/chatgpt-1020-airport-guide/</link>
+				<pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/chatgpt-1020-airport-guide/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;先说结论&lt;/strong&gt;：Error 1020 不是“速度慢”的提示，而是请求被站点安全策略拒绝。不要反复刷新或频繁切换国家，先记录错误时间、出口地区和客户端日志。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;一按顺序排查四个变量&#34;&gt;一、按顺序排查四个变量&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;浏览器状态&lt;/strong&gt;：使用无痕窗口打开，暂时禁用冲突扩展，清理 &lt;code&gt;chatgpt.com&lt;/code&gt; 的 Cookie。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;系统时间与 DNS&lt;/strong&gt;：检查系统时间是否准确，确认 DNS 没有把站点解析到异常地址。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;客户端分流&lt;/strong&gt;：将 &lt;code&gt;chatgpt.com&lt;/code&gt;、&lt;code&gt;oaistatic.com&lt;/code&gt;、&lt;code&gt;oaiusercontent.com&lt;/code&gt; 放到同一策略组，避免一部分请求直连。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;出口 IP&lt;/strong&gt;：查看当前 IP 的地区、ASN 和是否频繁变化。共享机房 IP 被拦截时，换客户端通常不会解决问题。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二clash-分流示例&#34;&gt;二、Clash 分流示例&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;rules&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,chatgpt.com,AI&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,oaistatic.com,AI&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,oaiusercontent.com,AI&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;MATCH,DIRECT&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;应用规则后重启浏览器，观察一次完整登录流程。不要在同一会话中连续切换多个地区节点。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三仍无法访问时如何比较线路&#34;&gt;三、仍无法访问时如何比较线路&lt;/h2&gt;&#xA;&lt;p&gt;记录三个时间点的错误率、首字节等待时间和出口 IP，再比较不同服务商。若你没有可用的对照节点，可以试用 &lt;strong&gt;&lt;a href=&#34;%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D&#34;&gt;{{快狸}}&lt;/a&gt;&lt;/strong&gt;，使用 &lt;code&gt;{{kl888}}&lt;/code&gt;，但请把它当作对照样本而不是“必然解锁”保证。&lt;/p&gt;&#xA;&lt;h2 id=&#34;四不要被原生-ip四个字替代验证&#34;&gt;四、不要被“原生 IP”四个字替代验证&lt;/h2&gt;&#xA;&lt;p&gt;服务商对 IP 类型的描述不能代替实测。至少记录：测试日期、网络运营商、节点地区、IPv4/IPv6 出口、是否出现验证码，以及连续三次访问结果。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

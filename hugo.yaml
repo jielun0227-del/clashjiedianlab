@@ -1,0 +1,65 @@
+baseURL: "https://clashjiedianlab.com/"
+languageCode: "zh-cn"
+title: "极客网络实验室 | 跨境网络工具与节点实测指南"
+theme: "PaperMod"
+enableRobotsTXT: true
+
+sitemap:
+  changeFreq: "weekly"
+  priority: 0.5
+  filename: "sitemap.xml"
+
+outputs:
+  home: ["HTML", "RSS", "SITEMAP"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  env: "production"
+  title: "极客网络实验室"
+  description: "深度测评主流网络加速服务商，提供 Clash、Shadowrocket、Sing-box 客户端配置教程及海外流媒体与 AI 工具网络方案。"
+  keywords: ["机场推荐", "Clash教程", "Shadowrocket配置", "IPLC专线", "科学上网", "ChatGPT节点"]
+  author: "GeekLab"
+  authorBio: "独立记录跨境网络工具、客户端配置与线路稳定性测试。"
+  homeInfoParams:
+    Title: "探索高速、纯净、稳定的全球网络体验"
+    Content: "本站专注于代理协议科普、主流客户端进阶配置及晚高峰节点稳定性量化实测。官方频道与备用分发请关注下方社群。"
+  socialIcons:
+    - name: "telegram"
+      url: "{{TG_CHANNEL}}"
+    - name: "rss"
+      url: "/index.xml"
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: true
+
+menu:
+  main:
+    - name: "首页"
+      url: "/"
+      weight: 5
+    - name: "文章科普"
+      url: "/articles/"
+      weight: 10
+    - name: "教程知识库"
+      url: "/docs/"
+      weight: 20
+    - name: "机场推荐榜"
+      url: "/recommend/"
+      weight: 30
+    - name: "故障 FAQ"
+      url: "/faq/"
+      weight: 40
+    - name: "深度测评"
+      url: "/reviews/"
+      weight: 50
+    - name: "机场优惠码"
+      url: "/coupons/"
+      weight: 55
+    - name: "关于"
+      url: "/about/"
+      weight: 60

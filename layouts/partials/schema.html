@@ -1,0 +1,15 @@
+{{- $description := .Description | default site.Params.description -}}
+{{- $author := dict "@type" "Person" "name" site.Params.author -}}
+{{- $article := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" $description "url" .Permalink "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "author" $author "publisher" (dict "@type" "Organization" "name" site.Title) -}}
+<script type="application/ld+json">{{ $article | jsonify | safeHTML }}</script>
+{{- if eq .Type "reviews" -}}
+  {{- $review := dict "@context" "https://schema.org" "@type" "Review" "name" .Title "reviewBody" $description "url" .Permalink "datePublished" (.Date.Format "2006-01-02") "author" $author "itemReviewed" (dict "@type" "Product" "name" (.Params.product | default "网络加速服务")) -}}
+  {{- with .Params.rating }}{{ $review = merge $review (dict "reviewRating" (dict "@type" "Rating" "ratingValue" . "bestRating" "10")) }}{{ end -}}
+  <script type="application/ld+json">{{ $review | jsonify | safeHTML }}</script>
+{{- end -}}
+{{- with .Params.faq -}}
+  {{- $entities := slice -}}
+  {{- range . }}{{ $entities = $entities | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}{{ end -}}
+  {{- $faq := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $entities -}}
+  <script type="application/ld+json">{{ $faq | jsonify | safeHTML }}</script>
+{{- end -}}

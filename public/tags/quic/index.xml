@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>QUIC on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/quic/</link>
+		<description>Recent content in QUIC on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/quic/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>TUIC v5 协议全指南：基于 QUIC 协议的高速低延迟代理实践</title>
+				<link>https://clashjiedianlab.com/docs/tuic-protocol-guide/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/tuic-protocol-guide/</guid>
+				<description>&lt;p&gt;随着 HTTP/3 的大面积普及，UDP / QUIC 协议在现代互联网流量中的占比逐年上升。&lt;strong&gt;TUIC&lt;/strong&gt; 是基于 QUIC 协议（RFC 9000）深度定制的高性能代理协议。在 v5 版本发布后，TUIC 进一步优化了握手时延与多路复用性能，成为了继 Hysteria 之后又一款备受瞩目的 UDP 代理利器。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-tuic-协议核心黑科技&#34;&gt;一、 TUIC 协议核心黑科技&lt;/h2&gt;&#xA;&lt;p&gt;为什么 TUIC 能够在弱网环境下实现极低的访问延迟？这归功于 QUIC 协议带来的底层红利：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;0-RTT 极速连接建立&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;传统的 TCP + TLS 代理需要 2 到 3 个 RTT 才能完成 TCP 三次握手与 TLS 密钥协商。&lt;/li&gt;&#xA;&lt;li&gt;TUIC 在重连时支持 0-RTT 快速开局，在点击网页或发起请求的瞬间即可完成数据发送，首包延迟大幅降低。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;连接迁移（Connection Migration）&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;手机在 Wi-Fi 与 5G 移动网络之间切换时，传统的 TCP 代理会直接断开并重新建立 Socket。&lt;/li&gt;&#xA;&lt;li&gt;TUIC 依靠 QUIC 的 Connection ID 机制，在 IP 地址与网络环境发生变更时，底层代理连接完全不中断。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;彻底消灭队头阻塞（Head-of-Line Blocking）&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TUIC 的每个流在 QUIC 中相互独立，单个数据包丢失绝不影响其他并发请求。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-tuic-v5-配置参数与实战&#34;&gt;二、 TUIC v5 配置参数与实战&lt;/h2&gt;&#xA;&lt;p&gt;客户端配置片段（Clash Meta / Sing-box 规范）：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

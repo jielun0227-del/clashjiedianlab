@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sing-box 入门教程：JSON 配置、路由规则与安全检查 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="Sing-box 基础教程，介绍 JSON 配置结构、路由规则、DNS 和日志排错方法。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/sing-box-tutorial/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-08\",\"datePublished\":\"2026-10-08\",\"description\":\"Sing-box 基础教程，介绍 JSON 配置结构、路由规则、DNS 和日志排错方法。\",\"headline\":\"Sing-box 入门教程：JSON 配置、路由规则与安全检查\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/sing-box-tutorial/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>Sing-box 入门教程：JSON 配置、路由规则与安全检查</h1><div class="article-meta"><time>更新于 2026 年 10 月 08 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#配置结构">配置结构</a></li>
+  </ul>
+</nav></aside><div class="article-content"><h2 id="配置结构">配置结构</h2>
+<p>Sing-box 配置通常分为 <code>inbounds</code>、<code>outbounds</code>、<code>route</code> 和 <code>dns</code>。修改前保留原文件备份，并使用客户端内置校验功能检查 JSON 语法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;log&#34;</span>: { <span style="color:#f92672">&#34;level&#34;</span>: <span style="color:#e6db74">&#34;info&#34;</span> },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;route&#34;</span>: { <span style="color:#f92672">&#34;auto_detect_interface&#34;</span>: <span style="color:#66d9ef">true</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>不要把访问令牌、订阅 URL 或私钥提交到公开仓库。出现连接异常时，先查看日志中的 DNS、TLS 和路由决策，再逐项缩小范围。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

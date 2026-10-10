@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>客户端对比 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AF%B9%E6%AF%94/</link>
+		<description>Recent content in 客户端对比 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AF%B9%E6%AF%94/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Shadowrocket 与 Clash 怎么选：协议、规则和设备支持对比</title>
+				<link>https://clashjiedianlab.com/articles/shadowrocket-vs-clash/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/shadowrocket-vs-clash/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;结论先行&lt;/strong&gt;：iPhone 用户更看重上手速度时可优先考虑 Shadowrocket；需要跨平台、细粒度规则和桌面调试能力时，Clash 系列更合适。两者的实际速度主要取决于节点质量与网络路径，而不是客户端名称。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;完成客户端选择后，可参阅&lt;a href=&#34;https://clashjiedianlab.com/recommend/best-dedicated-airports-review-2026/&#34;&gt;2026 年度最佳专线机场综合横评&lt;/a&gt;，使用统一的线路和晚高峰指标比较订阅。&lt;/p&gt;&#xA;&lt;h2 id=&#34;核心差异&#34;&gt;核心差异&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;维度&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Shadowrocket&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;Clash 系列&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;主要平台&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;iOS、iPadOS&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Windows、macOS、Linux、Android（视发行版）&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;规则模型&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;规则组与脚本&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;YAML 配置、规则集、策略组&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;适合人群&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;移动端快速使用&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;多设备与高级分流&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;排错能力&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;日志和连接测试&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;日志、面板、策略切换更完整&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;如何选择节点&#34;&gt;如何选择节点&lt;/h2&gt;&#xA;&lt;p&gt;建议先用同一地区的多个节点测试延迟、丢包和实际下载速度，再比较客户端。若现有节点在晚高峰频繁拥堵，可以在配置订阅前试用 &lt;strong&gt;&lt;a href=&#34;%7B%7Bhttps://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm%7D%7D&#34;&gt;{{快狸}}&lt;/a&gt;&lt;/strong&gt;，并通过客户端的延迟测试验证结果；不要只依据宣传带宽做判断。&lt;/p&gt;&#xA;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&#xA;&lt;p&gt;客户端解决的是分流与连接管理问题，不能替代稳定的上游线路。选择时优先考虑设备覆盖、规则维护和故障排查成本。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Windows加速器 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/windows%E5%8A%A0%E9%80%9F%E5%99%A8/</link>
+		<description>Recent content in Windows加速器 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/windows%E5%8A%A0%E9%80%9F%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Windows加速器选型与最佳配置实测指南</title>
+				<link>https://clashjiedianlab.com/docs/windows-accelerator/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/windows-accelerator/</guid>
+				<description>&lt;p&gt;在 Windows 操作系统中，实现全局网络加速与代理流量管理是跨境办公、游戏加速及学术研究的基础需求。随着代理协议的演进与客户端技术的迭代，主流 Windows 客户端已经从传统的 HTTP/SOCKS5 本地代理模式，全面过渡到基于系统级虚拟网卡（TUN/TAP）的全局接管架构。本文将深度拆解 Windows 加速器与网络代理的核心选型维度、性能优化方案以及常见故障排查。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-windows-平台主流代理工具选型对比&#34;&gt;一、 Windows 平台主流代理工具选型对比&lt;/h2&gt;&#xA;&lt;p&gt;目前 Windows 平台上最为流行且保持活跃维护的开源与现代化 GUI 客户端主要包括以下三类：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Clash Verge Rev&lt;/strong&gt;：基于 Tauri + React 打造的新一代 Clash GUI 界面，不仅内存占用低、UI 现代化，而且全面支持 Clash Meta (mihomo) 内核，完美适配 VLESS-REALITY、Hysteria2 以及 Hysteria 等最新协议。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;v2rayN&lt;/strong&gt;：老牌且功能极为强大的 Windows 客户端，支持目前几乎所有常见的代理协议与自定义 Core（Xray-core、sing-box 等），适合追求极高可定制性与复杂节点管理的进阶用户。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sing-box Windows UI&lt;/strong&gt;：官方推出的原生 GUI 客户端，性能极其出众，内存占用低至 20MB 以下，在处理万级规则集与 UDP 游戏数据包时表现极其优异。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-核心机制解析系统代理-vs-tun-虚拟网卡模式&#34;&gt;二、 核心机制解析：系统代理 vs TUN 虚拟网卡模式&lt;/h2&gt;&#xA;&lt;p&gt;在 Windows 系统中，代理工具的工作模式直接决定了网络接管的深度与兼容性：&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-系统代理模式system-proxy&#34;&gt;1. 系统代理模式（System Proxy）&lt;/h3&gt;&#xA;&lt;p&gt;系统代理模式通过在 Windows 注册表中设置全局代理 Server（通常为 &lt;code&gt;127.0.0.1:7890&lt;/code&gt;）来引导流量。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;：无需管理员权限，启动极其迅速，对 Chrome、Edge、Firefox 等标准 Web 浏览器天然友好。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;缺点&lt;/strong&gt;：无法接管不支持系统代理设置的命令行工具（CMD/PowerShell）、游戏客户端、Git 以及部分使用底层 Socket 的桌面软件。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-tun-模式tun-mode&#34;&gt;2. TUN 模式（Tun Mode）&lt;/h3&gt;&#xA;&lt;p&gt;TUN 模式通过创建虚拟网卡（如 Wintun），将操作系统网络栈中的所有流量强制重定向到代理内核进行路由判别与加密转发。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

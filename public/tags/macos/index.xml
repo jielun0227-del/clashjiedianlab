@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>MacOS on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/macos/</link>
+		<description>Recent content in MacOS on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Mac 苹果电脑机场节点配置指南：Clash Verge 与 Surge 全面解析</title>
+				<link>https://clashjiedianlab.com/docs/mac-airport-clash/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/mac-airport-clash/</guid>
+				<description>&lt;p&gt;macOS 作为高端生产力工具，对网络连接的稳定性、延迟以及应用兼容性有着极高的要求。开发者、设计师与跨境从业者在 Mac 上频繁使用 Terminal（终端）、Docker、Xcode 以及各类海外 API。如何在 macOS 环境下搭建高可用、无感分流的代理加速体系？本文将为你详细剖析 macOS 主流客户端选型与配置实战。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-macos-平台三大代理软件对比&#34;&gt;一、 macOS 平台三大代理软件对比&lt;/h2&gt;&#xA;&lt;p&gt;在 macOS 生态中，客户端的选择直接决定了开发环境与日常浏览的体验：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Clash Verge Rev for Mac&lt;/strong&gt;：目前 Mac 上性价比最高、最受欢迎的开源客户端。全面适配 Apple Silicon（M1/M2/M3/M4）芯片，完美支持 Clash Meta 内核与 TUN 增强模式。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Surge for Mac&lt;/strong&gt;：macOS 平台上的“终极网络工具”。拥有顶级性能、极其强大的抓包分析能力、网关模式（Enhanced Mode）以及无与伦比的 UI 质感。虽然价格昂贵，但对于专业开发者而言物有所值。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sing-box for macOS&lt;/strong&gt;：官方原生客户端，支持系统 App Store 直接安装。极致轻量化，对系统内存与 CPU 开销极小。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-macos-终端terminal与-docker-代理配置&#34;&gt;二、 macOS 终端（Terminal）与 Docker 代理配置&lt;/h2&gt;&#xA;&lt;p&gt;普通用户开启客户端“系统代理”后，Safari 与 Chrome 可以正常上网，但 Mac 的终端（zsh/bash）和 Docker 默认不会走 HTTP 代理。这是很多开发者遇到的最大痛点。&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-终端临时代理配置&#34;&gt;1. 终端临时代理配置&lt;/h3&gt;&#xA;&lt;p&gt;在终端中执行以下命令，将当前 Shell 窗口的流量临时定向至本地代理端口：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export http_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://127.0.0.1:7897&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export https_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://127.0.0.1:7897&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export all_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;socks5://127.0.0.1:7890&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-终端永久快捷命令zshrc-配置&#34;&gt;2. 终端永久快捷命令（zshrc 配置）&lt;/h3&gt;&#xA;&lt;p&gt;编辑 &lt;code&gt;~/.zshrc&lt;/code&gt; 文件，添加如下别名：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

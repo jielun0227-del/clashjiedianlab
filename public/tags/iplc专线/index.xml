@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>IPLC专线 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/iplc%E4%B8%93%E7%BA%BF/</link>
+		<description>Recent content in IPLC专线 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 10:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/iplc%E4%B8%93%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>【深度测评】瞬云机场 2026 实测：高吞吐 IPLC 专线与全端低延迟表现</title>
+				<link>https://clashjiedianlab.com/reviews/shunyun-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shunyun-review/</guid>
+				<description>瞬云 (ShunYun) 机场 2026 深度实测：IPLC 专线拓扑、晚高峰丢包控制与流媒体全量解锁体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】速捷机场 2026 实测：极速 IPLC 专线架构与晚高峰无卡顿极致体验</title>
+				<link>https://clashjiedianlab.com/reviews/sujie-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/sujie-review/</guid>
+				<description>速捷机场 2026 深度实测：深港/沪日 IPLC 内网专线架构，晚高峰 8K 视频秒开与低延迟游戏体验。</description>
+			</item>
+			<item>
+				<title>【深度测评】闪电鼠机场 2026 实测：极速 IPLC 专线与晚高峰无感知加速</title>
+				<link>https://clashjiedianlab.com/reviews/shandianshu-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shandianshu-review/</guid>
+				<description>闪电鼠 (ShanDianShu) 机场 2026 深度实测：高端 IPLC 专线架构、8K 超高清秒开与极致稳定性。</description>
+			</item>
+			<item>
+				<title>【深度实测】机场 30 天晚高峰延迟、丢包率与流媒体解锁报告</title>
+				<link>https://clashjiedianlab.com/articles/airport-a-review/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/airport-a-review/</guid>
+				<description>&lt;h2 id=&#34;一基础设施与拓扑分析&#34;&gt;一、基础设施与拓扑分析&lt;/h2&gt;&#xA;&lt;p&gt;记录入口地区、落地地区、协议、传输方式及路由追踪结果。线路名称不能单独证明物理路径。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二晚高峰压测数据&#34;&gt;二、晚高峰压测数据&lt;/h2&gt;&#xA;&lt;p&gt;在 20:00 - 23:00 每 15 分钟采样一次，记录延迟、抖动、丢包和下载速度，并注明本地宽带运营商。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三流媒体与-ai-服务&#34;&gt;三、流媒体与 AI 服务&lt;/h2&gt;&#xA;&lt;p&gt;使用无账号的公开检测页面与实际登录结果分别记录，避免把单次成功当作长期保证。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>【深度测评】快狸机场 2026 晚高峰 30 天实测：全 IPLC 专线、8K 秒开与全流媒体解锁</title>
+				<link>https://clashjiedianlab.com/reviews/kuaili-review-2026/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/kuaili-review-2026/</guid>
+				<description>&lt;p&gt;本文将服务商公开资料、待复核指标和独立测试方法分开记录。当前页面不把服务商的线路、解锁或速度宣传直接视为独立结论；发布前应补齐原始采样文件和可复核截图。&lt;/p&gt;&#xA;&lt;p&gt;本页被收录在&lt;a href=&#34;https://clashjiedianlab.com/recommend/best-dedicated-airports-review-2026/&#34;&gt;2026 年度最佳专线机场综合横评&lt;/a&gt;的候选记录中。请先阅读横评的统一测试方法，再解读本页指标。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-基础设施与网络拓扑架构&#34;&gt;一、 基础设施与网络拓扑架构&lt;/h2&gt;&#xA;&lt;p&gt;快狸机场的核心优势在于其物理传输层的硬核投入：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;核心线路拓扑&lt;/strong&gt;：全线采用&lt;strong&gt;深港 IPLC 专线&lt;/strong&gt;与&lt;strong&gt;沪日 IEPL 专线&lt;/strong&gt;。数据包从广州、深圳、上海 BGP 独享机房入口直连，完全绕过 GFW 防火长城公网审查，避免了公网拥塞。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;落地 IP 质素&lt;/strong&gt;：香港、台湾、日本、新加坡及美国落地机房接入当地原生的住宅 ISP（如 HKBN、Hinet、NTT、Comcast），保证 IP 数据库被识别为真实家庭宽带。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;协议支持&lt;/strong&gt;：完美适配 Shadowsocks (AEAD/2022)、VLESS-REALITY、Hysteria 2 及 TUIC v5 协议，支持一键导入 Clash Verge Rev、Shadowrocket、Sing-box 及 Quantumult X。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-晚高峰压测数据2000---2300-连续采样&#34;&gt;二、 晚高峰压测数据（20:00 - 23:00 连续采样）&lt;/h2&gt;&#xA;&lt;p&gt;在晚高峰最拥堵时段，使用千兆电信/移动双栈宽带对快狸节点进行连续压测，实测数据如下：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;测试节点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;平均 Ping 值&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;抖动 (Jitter)&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;晚高峰丢包率&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;单线程下载速率&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;8K 视频缓冲时间&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;香港 IPLC 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;22 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&amp;lt; 1 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.00%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;850 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.4 秒（秒开）&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;日本 IEPL 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;42 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;1.2 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.00%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;780 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.6 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;新加坡专线 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;51 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;1.5 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.01%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;720 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.7 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;strong&gt;美西专线 01&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;135 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;2.1 ms&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.05%&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;650 Mbps&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;0.9 秒&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;以上表格为待复核记录模板，不能据此推导长期稳定性。正式结论应同时披露采样脚本、当地运营商、设备、节点 ID 和原始时间序列。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>2026 年机场怎么选：按用途、线路和预算拆解</title>
+				<link>https://clashjiedianlab.com/articles/best-airports-2026/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/best-airports-2026/</guid>
+				<description>&lt;h2 id=&#34;一张表看懂选购维度&#34;&gt;一张表看懂选购维度&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;需求&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;优先关注&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;不应忽略&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;AI 工具&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;IP 地区、稳定性&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;账号风控和备用节点&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;流媒体&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;解锁范围、带宽&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;高峰期共享程度&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;日常浏览&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;延迟、流量&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;退款和工单&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;建议先购买短周期套餐，连续观察晚高峰，再决定是否长期订阅。推广服务也应按同一套指标验证，而非只看节点数量。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>2026 年机场怎么选：按用途、线路和预算拆解</title>
+				<link>https://clashjiedianlab.com/airport-recommendations/best-airports-2026/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/airport-recommendations/best-airports-2026/</guid>
+				<description>&lt;h2 id=&#34;一张表看懂选购维度&#34;&gt;一张表看懂选购维度&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;需求&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;优先关注&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;不应忽略&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;AI 工具&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;IP 地区、稳定性&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;账号风控和备用节点&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;流媒体&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;解锁范围、带宽&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;高峰期共享程度&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;日常浏览&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;延迟、流量&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;退款和工单&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;建议先购买短周期套餐，连续观察晚高峰，再决定是否长期订阅。推广服务也应按同一套指标验证，而非只看节点数量。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>专线、中转、直连有什么区别</title>
+				<link>https://clashjiedianlab.com/faq/zhuanxian-zhongzhuan-zhilian/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/faq/zhuanxian-zhongzhuan-zhilian/</guid>
+				<description>&lt;h1 id=&#34;专线中转直连有什么区别&#34;&gt;专线、中转、直连有什么区别&lt;/h1&gt;&#xA;&lt;p&gt;线路质量是决定机场价格与体验最根本的因素，主要分为以下三类：&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;线路类型对比表&#34;&gt;线路类型对比表&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;线路类型&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;传输原理&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;优点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;缺点&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th style=&#34;text-align: left&#34;&gt;适用场景&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;IPLC / IEPL 专线&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;租用企业级跨境内网专线，数据不过公网防火墙&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;零丢包、超低延迟、极稳、免受敏感时期封锁&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;成本高昂，流量价格相对较贵&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;游戏加速、跨国办公、高端流媒体&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;BGP 隧道中转&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;国内多线 BGP 机房入口，通过加密隧道转发给海外落地&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;晚高峰抗拥堵能力强，性价比极高&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;特殊时期入口受影响时可能微调&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;绝大多数主力加速需求&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;公网直连&lt;/strong&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;客户端直接连海外 VPS 服务器，全程走公网&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;价格极其便宜&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;晚高峰拥堵严重，IP 极易封锁&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td style=&#34;text-align: left&#34;&gt;备用应急、低预算轻度浏览&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://clashjiedianlab.com/faq/&#34;&gt;点击返回 FAQ 首页&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

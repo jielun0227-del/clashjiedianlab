@@ -1,0 +1,6 @@
+.hugo_build.lock
+hugo.zip
+resources/_gen/
+scratch/
+.DS_Store
+Thumbs.db

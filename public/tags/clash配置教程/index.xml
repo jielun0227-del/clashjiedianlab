@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Clash配置教程 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/clash%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</link>
+		<description>Recent content in Clash配置教程 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/clash%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Clash / Clash Verge 进阶配置教程：Sub-Store 订阅整合与自定义分流</title>
+				<link>https://clashjiedianlab.com/docs/clash-full-config-tutorial/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/clash-full-config-tutorial/</guid>
+				<description>&lt;p&gt;随着手头持有的机场订阅越来越多，如何在 Clash 客户端中将多家机场的节点进行统一去重、节点重命名、自动筛选故障节点并叠加自定义分流规则？&lt;strong&gt;Clash / Clash Verge Rev&lt;/strong&gt; 的进阶配置能帮你实现这一目标。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-使用-sub-store-实现多机场订阅聚合&#34;&gt;一、 使用 Sub-Store 实现多机场订阅聚合&lt;/h2&gt;&#xA;&lt;p&gt;Sub-Store 是强大的开源订阅管理工具，支持多订阅合并、节点正则过滤以及标志注入，自动剔除高倍率或故障节点。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二-clash-verge-rev-自定义-merge-规则配置&#34;&gt;二、 Clash Verge Rev 自定义 Merge 规则配置&lt;/h2&gt;&#xA;&lt;p&gt;在 Clash Verge Rev 中，可以通过预处理 (Script / Merge) 优雅地插入自定义规则：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;prepend-rules&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-SUFFIX,work-internal.com,公司节点&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;DOMAIN-KEYWORD,openai,ChatGPT专用&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;GEOIP,telegram,TG代理组,no-resolve&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;prepend-proxy-groups&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;ChatGPT专用&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;select&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;proxies&lt;/span&gt;:&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;快狸-香港IPLC&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;边缘节点-美西&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;DIRECT&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过预处理配置，可以打造出完全个性化、自动化故障转移的高可用网络调度系统。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

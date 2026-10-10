@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Github加速 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/github%E5%8A%A0%E9%80%9F/</link>
+		<description>Recent content in Github加速 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/github%E5%8A%A0%E9%80%9F/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>GitHub 极速加速指南：解决 git clone 超时、RAW 静态资源与 Copilot 连通性</title>
+				<link>https://clashjiedianlab.com/articles/github-speedup-guide/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/github-speedup-guide/</guid>
+				<description>&lt;p&gt;对于程序员、开源爱好者与技术开发者而言，&lt;strong&gt;GitHub&lt;/strong&gt; 是全球最大的代码托管平台与知识宝库。然而，由于 GitHub 众多 CDN 节点在在国内面临 DNS 污染、TCP 阻断以及晚高峰带宽限制，开发者经常遇到 &lt;code&gt;git clone&lt;/code&gt; 速度极慢甚至连接超时（&lt;code&gt;Connection timed out&lt;/code&gt;）、&lt;code&gt;raw.githubusercontent.com&lt;/code&gt; 无法打开以及 GitHub Copilot 补全卡顿的困扰。本文将为你提供最全面的 GitHub 加速解决方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-github-访问受阻的核心原因解析&#34;&gt;一、 GitHub 访问受阻的核心原因解析&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;DNS 域名解析污染&lt;/strong&gt;：&lt;code&gt;github.com&lt;/code&gt; 及其静态资源域名（&lt;code&gt;assets-cdn.github.com&lt;/code&gt;、&lt;code&gt;raw.githubusercontent.com&lt;/code&gt;）在 DNS 解析时常被重定向到不可达的无效 IP，导致浏览器无法加载样式或提示超时。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Git 命令行与终端默认不走系统代理&lt;/strong&gt;：在 Windows / Mac 系统开启代理后，网页端可以访问 GitHub，但在终端执行 &lt;code&gt;git clone&lt;/code&gt; 或 &lt;code&gt;npm install&lt;/code&gt; 时，终端流量默认绕过了代理客户端的 HTTP 端口。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub Copilot 实时 WebSocket 连接中断&lt;/strong&gt;：Copilot 需要向 &lt;code&gt;api.githubcopilot.com&lt;/code&gt; 发起高频实时请求，若节点延迟波动大，会导致代码补全频繁失效。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-github-终端与-git-全局代理最佳配置&#34;&gt;二、 GitHub 终端与 Git 全局代理最佳配置&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-git-命令行配置专用代理&#34;&gt;1. Git 命令行配置专用代理&lt;/h3&gt;&#xA;&lt;p&gt;在终端（CMD / PowerShell / zsh）中执行以下命令，为 Git 设置 Socks5 / HTTP 代理：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

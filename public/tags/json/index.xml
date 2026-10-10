@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>JSON on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/json/</link>
+		<description>Recent content in JSON on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/json/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Sing-box 入门教程：JSON 配置、路由规则与安全检查</title>
+				<link>https://clashjiedianlab.com/articles/sing-box-tutorial/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/sing-box-tutorial/</guid>
+				<description>&lt;h2 id=&#34;配置结构&#34;&gt;配置结构&lt;/h2&gt;&#xA;&lt;p&gt;Sing-box 配置通常分为 &lt;code&gt;inbounds&lt;/code&gt;、&lt;code&gt;outbounds&lt;/code&gt;、&lt;code&gt;route&lt;/code&gt; 和 &lt;code&gt;dns&lt;/code&gt;。修改前保留原文件备份，并使用客户端内置校验功能检查 JSON 语法。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt; },&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;route&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;auto_detect_interface&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不要把访问令牌、订阅 URL 或私钥提交到公开仓库。出现连接异常时，先查看日志中的 DNS、TLS 和路由决策，再逐项缩小范围。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Sing-box 入门教程：JSON 配置、路由规则与安全检查</title>
+				<link>https://clashjiedianlab.com/docs/sing-box-tutorial/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/sing-box-tutorial/</guid>
+				<description>&lt;h2 id=&#34;配置结构&#34;&gt;配置结构&lt;/h2&gt;&#xA;&lt;p&gt;Sing-box 配置通常分为 &lt;code&gt;inbounds&lt;/code&gt;、&lt;code&gt;outbounds&lt;/code&gt;、&lt;code&gt;route&lt;/code&gt; 和 &lt;code&gt;dns&lt;/code&gt;。修改前保留原文件备份，并使用客户端内置校验功能检查 JSON 语法。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;level&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;info&amp;#34;&lt;/span&gt; },&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;route&amp;#34;&lt;/span&gt;: { &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;auto_detect_interface&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不要把访问令牌、订阅 URL 或私钥提交到公开仓库。出现连接异常时，先查看日志中的 DNS、TLS 和路由决策，再逐项缩小范围。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

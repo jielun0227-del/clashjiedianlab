@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>V2rayNG on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/v2rayng/</link>
+		<description>Recent content in V2rayNG on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/v2rayng/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>安卓手机翻墙与客户端配置全攻略：v2rayNG、Clash 与 Sing-box</title>
+				<link>https://clashjiedianlab.com/docs/android-vpn-setup/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/android-vpn-setup/</guid>
+				<description>&lt;p&gt;Android 系统因其高度开放的架构，成为了代理协议演化与测试的第一阵地。从早期简单的 Shadowsocks 客户端，发展到现在支持多内核、复杂分流以及应用分包过滤的现代 GUI 软件，安卓手机的翻墙体验经历了翻天覆地的变化。本文将全面剖析 Android 平台主流加速客户端的选型、分流策略以及手机续航优化技巧。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-安卓平台三大旗舰代理客户端对比&#34;&gt;一、 安卓平台三大旗舰代理客户端对比&lt;/h2&gt;&#xA;&lt;p&gt;在 Android 平台上，主流客户端呈现出“三足鼎立”的格局：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;v2rayNG&lt;/strong&gt;：安卓生态中最普及的通用代理工具。界面直观、极易上手，完美支持 VLESS-REALITY、VMess、Shadowsocks 及 Trojan。内置扫描二维码与一键导入订阅，非常适合新手用户。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Clash Meta for Android (CMFA)&lt;/strong&gt;：基于 Clash Meta 内核打造的安卓客户端。支持极致的分流规则组、自定义节点组策略以及灵活的节点路由，适合对分流有精细化需求的用户。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sing-box Android&lt;/strong&gt;：新一代高能效工具。凭借极其优秀的 Rust/Go 编译架构，Sing-box 在安卓后台运行时产生的功耗极低，同时天然原生支持 Hysteria 2 与 TUIC 协议。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-核心实操订阅导入与分流设置&#34;&gt;二、 核心实操：订阅导入与分流设置&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-v2rayng-快速配置流程&#34;&gt;1. v2rayNG 快速配置流程&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;打开应用，点击右上角 &lt;code&gt;+&lt;/code&gt; 号，选择“批量导入订阅”或“扫描二维码”。&lt;/li&gt;&#xA;&lt;li&gt;在“订阅设置”中添加订阅 URL 并更新。&lt;/li&gt;&#xA;&lt;li&gt;点击右上角三点菜单，更新 V2Ray/Xray 路由规则库（geoip 与 geosite）。&lt;/li&gt;&#xA;&lt;li&gt;在“设置”中开启“分流应用”，勾选需要经过代理的特定 App（如 Telegram、YouTube、Twitter），避免国内 App 误走代理造成流量浪费。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;2-路由规则与分流模式bypass-mainland-china&#34;&gt;2. 路由规则与分流模式（Bypass Mainland China）&lt;/h3&gt;&#xA;&lt;p&gt;为了兼顾访问速度与本地应用正常使用，安卓翻墙必须正确配置“绕过大陆”规则：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;域名匹配（geosite:cn）&lt;/strong&gt;：确保所有 &lt;code&gt;.cn&lt;/code&gt; 及国内厂商域名走 Direct 线路。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;IP 匹配（geoip:cn）&lt;/strong&gt;：本地判断真实 IP，若目标 IP 为中国大陆则直连。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;应用分流（Per-App Proxy）&lt;/strong&gt;：在 VpnService 层面仅将指定的海外软件划入 VPN 虚拟网卡接口，国内应用完全不经过代理内核，大幅降低系统 CPU 开销。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;三-移动端性能与耗电量优化&#34;&gt;三、 移动端性能与耗电量优化&lt;/h2&gt;&#xA;&lt;p&gt;手机后台运行代理客户端最常见的痛点是&lt;strong&gt;电池消耗过大&lt;/strong&gt;与&lt;strong&gt;后台进程被系统 Kill&lt;/strong&gt;。建议采取以下优化措施：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

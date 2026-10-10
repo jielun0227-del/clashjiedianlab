@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/categories/</link>
+		<description>Recent content in Categories on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>文章科普</title>
+				<link>https://clashjiedianlab.com/categories/%E6%96%87%E7%AB%A0%E7%A7%91%E6%99%AE/</link>
+				<pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E6%96%87%E7%AB%A0%E7%A7%91%E6%99%AE/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>机场推荐</title>
+				<link>https://clashjiedianlab.com/categories/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</link>
+				<pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>教程知识库</title>
+				<link>https://clashjiedianlab.com/categories/%E6%95%99%E7%A8%8B%E7%9F%A5%E8%AF%86%E5%BA%93/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E6%95%99%E7%A8%8B%E7%9F%A5%E8%AF%86%E5%BA%93/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>深度测评</title>
+				<link>https://clashjiedianlab.com/categories/%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%84/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E6%B7%B1%E5%BA%A6%E6%B5%8B%E8%AF%84/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>客户端教程</title>
+				<link>https://clashjiedianlab.com/categories/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%99%E7%A8%8B/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%99%E7%A8%8B/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>故障 FAQ</title>
+				<link>https://clashjiedianlab.com/categories/%E6%95%85%E9%9A%9C-faq/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/categories/%E6%95%85%E9%9A%9C-faq/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>测速报告 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E6%B5%8B%E9%80%9F%E6%8A%A5%E5%91%8A/</link>
+		<description>Recent content in 测速报告 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E6%B5%8B%E9%80%9F%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>【深度实测】机场 30 天晚高峰延迟、丢包率与流媒体解锁报告</title>
+				<link>https://clashjiedianlab.com/articles/airport-a-review/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/articles/airport-a-review/</guid>
+				<description>&lt;h2 id=&#34;一基础设施与拓扑分析&#34;&gt;一、基础设施与拓扑分析&lt;/h2&gt;&#xA;&lt;p&gt;记录入口地区、落地地区、协议、传输方式及路由追踪结果。线路名称不能单独证明物理路径。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二晚高峰压测数据&#34;&gt;二、晚高峰压测数据&lt;/h2&gt;&#xA;&lt;p&gt;在 20:00 - 23:00 每 15 分钟采样一次，记录延迟、抖动、丢包和下载速度，并注明本地宽带运营商。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三流媒体与-ai-服务&#34;&gt;三、流媒体与 AI 服务&lt;/h2&gt;&#xA;&lt;p&gt;使用无账号的公开检测页面与实际登录结果分别记录，避免把单次成功当作长期保证。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

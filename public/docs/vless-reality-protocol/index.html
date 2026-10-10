@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLESS-REALITY 协议原理与配置：无证书伪装与 TLS 指纹偷取解密 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="解析 Xray 团队推出的 VLESS-REALITY 协议：无需购买域名、消灭 TLS 证书特征与中间人借用伪装机制。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/vless-reality-protocol/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-09\",\"datePublished\":\"2026-10-09\",\"description\":\"解析 Xray 团队推出的 VLESS-REALITY 协议：无需购买域名、消灭 TLS 证书特征与中间人借用伪装机制。\",\"headline\":\"VLESS-REALITY 协议原理与配置：无证书伪装与 TLS 指纹偷取解密\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/vless-reality-protocol/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>VLESS-REALITY 协议原理与配置：无证书伪装与 TLS 指纹偷取解密</h1><div class="article-meta"><time>更新于 2026 年 10 月 09 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-vless-reality-核心创新突破">一、 VLESS-REALITY 核心创新突破</a></li>
+    <li><a href="#二-vless-reality-关键配置参数详解">二、 VLESS-REALITY 关键配置参数详解</a></li>
+    <li><a href="#三-总结">三、 总结</a></li>
+  </ul>
+</nav></aside><div class="article-content"><p>在主动探测与 DPI（深度包检测）技术日益精进的背景下，传统的代理伪装方案暴露出了新的风险点：域名 CA 证书备案特征、SNI 主动探测响应以及固定 TLS 指纹等。针对这些安全隐患，Xray 团队提出了革命性的代理技术——<strong>VLESS-REALITY</strong>。它不仅彻底消灭了用户自建域名的需求，还实现了无缝借用大厂真实 TLS 证书的“完美伪装”。</p>
+<h2 id="一-vless-reality-核心创新突破">一、 VLESS-REALITY 核心创新突破</h2>
+<p>REALITY 协议的设计思想可以概括为“借尸还魂”与“偷天换日”：</p>
+<ol>
+<li><strong>无需自建域名与申请证书</strong>：
+<ul>
+<li>传统方案必须自费购买域名并定期申请 Let&rsquo;s Encrypt 证书。</li>
+<li>REALITY 允许你直接指定一个合法的第三方优质大厂域名（如 <code>apple.com</code>、<code>microsoft.com</code>）作为目标服务端伪装对象。</li>
+</ul>
+</li>
+<li><strong>消除主动探测风险（SNI Filtering）</strong>：
+<ul>
+<li>当 GFW 防火墙或扫描器向你的节点 IP 发起 TLS 握手探针时，由于其无法提供正确的 REALITY 密钥，REALITY 服务端会将探针流量无缝盲转到真实的 <code>apple.com</code> 服务器。</li>
+<li>探测者收到的响应证书和数据包完全来自于真正的苹果官方服务器，从而完美骗过主动探测。</li>
+</ul>
+</li>
+<li><strong>消灭 TLS 证书前向特征</strong>：
+<ul>
+<li>在整个连接过程中，代理客户端与服务端使用 ECDH 临时密钥对加密握手，GFW 在链路上完全无法将其与真实的 HTTPS 流量区分开来。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二-vless-reality-关键配置参数详解">二、 VLESS-REALITY 关键配置参数详解</h2>
+<p>在使用 REALITY 协议时，客户端与服务端需要配置几个核心要素：</p>
+<ul>
+<li><strong>Server Name (SNI)</strong>：借用的目标伪装域名（例如 <code>dl.google.com</code>）。</li>
+<li><strong>Public Key (pbk)</strong>：服务端生成的 ECDH 公钥。</li>
+<li><strong>Short ID (sid)</strong>：服务端指定的简短标识符。</li>
+</ul>
+<p>客户端配置片段（Clash Meta 格式）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">proxies</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;REALITY-Node&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">vless</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">your_vps_ip</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">uuid</span>: <span style="color:#ae81ff">your-uuid-string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">network</span>: <span style="color:#ae81ff">tcp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tls</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">udp</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">flow</span>: <span style="color:#ae81ff">xtls-rprx-vision</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">servername</span>: <span style="color:#ae81ff">dl.google.com</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">reality-opts</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">public-key</span>: <span style="color:#e6db74">&#34;Your-ECDH-Public-Key&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">short-id</span>: <span style="color:#e6db74">&#34;af123456&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-fingerprint</span>: <span style="color:#ae81ff">chrome</span>
+</span></span></code></pre></div><h2 id="三-总结">三、 总结</h2>
+<p>VLESS-REALITY 通过巧妙的流量盲转发与密钥校验，打破了代理必须买域名的传统范式。凭借极致的伪装防护力与 Vision 流控的性能加持，REALITY 已经成为目前最主流的协议之一。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

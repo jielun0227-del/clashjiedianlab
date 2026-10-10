@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Netflix on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/netflix/</link>
+		<description>Recent content in Netflix on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/netflix/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>解锁流媒体节点原理与实测：原生 IP、DNS 分流与 Netflix/Disney&#43; 避坑</title>
+				<link>https://clashjiedianlab.com/docs/streaming-unlock-nodes/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/streaming-unlock-nodes/</guid>
+				<description>&lt;p&gt;在使用加速节点访问海外流媒体（Netflix、Disney+、HBO Max）及 AI 工具（ChatGPT、Claude）时，许多用户经常遇到提示使用了代理、视频无法播放或仅能观看自制剧的问题。为什么明明连上了节点却无法解锁内容？&lt;strong&gt;解锁流媒体节点&lt;/strong&gt;的底层技术原理是什么？&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-流媒体平台封锁代理的底层逻辑&#34;&gt;一、 流媒体平台封锁代理的底层逻辑&lt;/h2&gt;&#xA;&lt;p&gt;Netflix 等平台为了版权区域保护，建立了庞大的代理 IP 数据库与风控系统：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;机房 IP 数据库匹配&lt;/strong&gt;：判断连接 IP 是否来自于 AWS、DigitalOcean 等云计算机房，若是则判定为代理。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;广播 IP 判定&lt;/strong&gt;：IP 注册地与实际广播地点不符，触发区域封锁。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;同 IP 多账号并发风控&lt;/strong&gt;：几百名用户共享同一个出口 IP 同时登录，触发防共享风控。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-流媒体节点解锁两大实现方案&#34;&gt;二、 流媒体节点解锁两大实现方案&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;原生住宅 IP（Residential Native IP）&lt;/strong&gt;：直接租用海外当地 ISP（如香港 HKBN、日本 NTT 住宅宽带）分配的真实家庭 IP 作为落地出口，100% 原生解锁当地所有版权库。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;DNS 自动分流解锁（DNS Unlocker / SNI Proxy）&lt;/strong&gt;：当检测到用户发起针对 &lt;code&gt;netflix.com&lt;/code&gt; 或 &lt;code&gt;openai.com&lt;/code&gt; 的请求时，机场内网 DNS 规则会自动将该域名的流量重定向到专门购买的解锁代理服务器进行二次转发。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;使用检测脚本测试解锁状态，挑选具备 DNS 解锁或原生 IP 的节点，能让你畅享全球影音娱乐。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

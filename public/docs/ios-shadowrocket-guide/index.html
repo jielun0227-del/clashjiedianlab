@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iOS 小火箭 (Shadowrocket) 进阶教程：规则订阅、证书解锁与自动化 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="Shadowrocket（小火箭）全面配置教程，包含节点导入、按域名分流、MitM HTTPS 解密及快捷指令自动化。">
+  <link rel="canonical" href="https://clashjiedianlab.com/docs/ios-shadowrocket-guide/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-09\",\"datePublished\":\"2026-10-09\",\"description\":\"Shadowrocket（小火箭）全面配置教程，包含节点导入、按域名分流、MitM HTTPS 解密及快捷指令自动化。\",\"headline\":\"iOS 小火箭 (Shadowrocket) 进阶教程：规则订阅、证书解锁与自动化\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/docs/ios-shadowrocket-guide/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">DOCS / FIELD NOTE</p><h1>iOS 小火箭 (Shadowrocket) 进阶教程：规则订阅、证书解锁与自动化</h1><div class="article-meta"><time>更新于 2026 年 10 月 09 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-快速上手节点订阅与全局路由设置">一、 快速上手：节点订阅与全局路由设置</a>
+      <ul>
+        <li><a href="#1-订阅导入">1. 订阅导入</a></li>
+        <li><a href="#2-核心路由模式说明">2. 核心路由模式说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-进阶技巧规则订阅与自定义分流">二、 进阶技巧：规则订阅与自定义分流</a></li>
+    <li><a href="#三-高级功能mitm-证书安装与重写脚本">三、 高级功能：MitM 证书安装与重写脚本</a></li>
+    <li><a href="#四-自动化结合-ios-快捷指令shortcuts">四、 自动化：结合 iOS 快捷指令（Shortcuts）</a></li>
+  </ul>
+</nav></aside><div class="article-content"><p>在苹果 iOS 生态中，Shadowrocket（俗称“小火箭”）无疑是普及率最高、功能最完善的网络代理与分流客户端。它不仅全面支持 Shadowsocks、VLESS、VMess、Hysteria2、TUIC、Trojan 等主流代理协议，还具备强大的 HTTP/HTTPS 抓包、脚本扩展以及 MitM 解密能力。本文将从基础导入到高级自动化，全方位揭秘小火箭的使用技巧。</p>
+<h2 id="一-快速上手节点订阅与全局路由设置">一、 快速上手：节点订阅与全局路由设置</h2>
+<h3 id="1-订阅导入">1. 订阅导入</h3>
+<p>小火箭支持多种高效的节点导入方式：</p>
+<ul>
+<li><strong>一键导入</strong>：在机场后台点击“导入到 Shadowrocket”，系统会自动唤起小火箭完成添加。</li>
+<li><strong>扫描二维码 / 剪贴板导入</strong>：打开小火箭，点击右上角 <code>+</code> 号，类型选择 Subscribe，粘贴订阅链接后点击保存。</li>
+<li><strong>自动更新</strong>：在“设置 -&gt; 订阅”中开启“打开应用时更新”与“自动更新”，确保节点列表实时同步。</li>
+</ul>
+<h3 id="2-核心路由模式说明">2. 核心路由模式说明</h3>
+<p>小火箭主页的“全局路由”选项决定了系统流量的分流逻辑：</p>
+<ul>
+<li><strong>配置（Config）</strong>：<strong>推荐使用</strong>。根据加载的规则文件自动判断流量走直连、代理还是拒绝，实现国内直连、海外代理。</li>
+<li><strong>代理（Proxy）</strong>：全局代理模式。所有手机流量无论国内海外均经过代理节点。</li>
+<li><strong>直连（Direct）</strong>：全局直连模式。代理节点失效，所有流量直接访问。</li>
+<li><strong>场景（Scene）</strong>：根据连接的 Wi-Fi 名称或移动网络自动切换不同的节点与规则。</li>
+</ul>
+<h2 id="二-进阶技巧规则订阅与自定义分流">二、 进阶技巧：规则订阅与自定义分流</h2>
+<p>标准默认规则可能无法覆盖所有复杂场景（如特定流媒体分流、ChatGPT 规则重定向）。引入第三方优质规则库能让体验更上一层楼：</p>
+<ol>
+<li><strong>添加第三方规则集</strong>：
+<ul>
+<li>切换到小火箭“配置”页面，点击右上角 <code>+</code>，输入规则链接（如神机规则、ACL4SSR 规则）。</li>
+<li>下载完成后点击该配置文件并选择“使用配置”。</li>
+</ul>
+</li>
+<li><strong>手写自定义规则</strong>：
+<ul>
+<li>在当前配置中点击“添加规则”。</li>
+<li><strong>DOMAIN-SUFFIX</strong>：域名后缀匹配（如 <code>domain-suffix, openai.com, 节点选择</code>）。</li>
+<li><strong>IP-CIDR</strong>：IP 段匹配（如 <code>ip-cidr, 192.168.1.0/24, DIRECT</code>）。</li>
+<li><strong>GEOIP</strong>：基于地理位置匹配（如 <code>geoip, cn, DIRECT</code>）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="三-高级功能mitm-证书安装与重写脚本">三、 高级功能：MitM 证书安装与重写脚本</h2>
+<p>小火箭不仅是代理工具，还具备 HTTPS 中间人解密（MitM）功能，常用于广告拦截与脚本扩展：</p>
+<ol>
+<li><strong>安装 CA 证书</strong>：在“设置 -&gt; 证书”中点击“生成新的 CA 证书”，再点击“安装证书”跳转至 iOS 系统设置中安装描述文件。</li>
+<li><strong>信任证书</strong>：进入 iOS “设置 -&gt; 通用 -&gt; 关于本机 -&gt; 证书信任设置”，勾选小火箭生成的根证书信任开关。</li>
+<li><strong>启用 Rewrite（重写）</strong>：在配置中开启重写功能，可实现特定 App 内测功能开启、网页去广告及 URL 自动重定向。</li>
+</ol>
+<h2 id="四-自动化结合-ios-快捷指令shortcuts">四、 自动化：结合 iOS 快捷指令（Shortcuts）</h2>
+<p>为了实现无感使用，可以利用 iOS 系统的“快捷指令”设置自动化开关：</p>
+<ul>
+<li><strong>自动开启</strong>：设置“当打开 Telegram / YouTube 时” -&gt; 执行行动“开启 Shadowrocket”。</li>
+<li><strong>自动关闭</strong>：设置“当连接至公司 Wi-Fi 时” -&gt; 执行行动“关闭 Shadowrocket”。</li>
+</ul>
+<p>小火箭凭借对新协议的快速适配与极低的系统资源占用，成为了 iOS 用户必备的网络神器。掌握规则配置与自动化联动，能让你的 iPhone 网络体验更加顺滑。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

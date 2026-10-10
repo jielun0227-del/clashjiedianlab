@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hysteria2 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/hysteria2/</link>
+		<description>Recent content in Hysteria2 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/hysteria2/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hysteria 2 协议全解析：UDP 拥塞控制、高抗封锁与抗高丢包实测</title>
+				<link>https://clashjiedianlab.com/docs/hysteria2-protocol-guide/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/hysteria2-protocol-guide/</guid>
+				<description>&lt;p&gt;在现代化代理协议的发展历程中，&lt;strong&gt;Hysteria 2&lt;/strong&gt;（简称 Hy2）无疑是近年来最具颠覆力的协议之一。面对劣质线路、长距离跨国链路以及高达 30% 以上的恶劣丢包环境，传统基于 TCP 的代理协议由于 TCP 拥塞控制机制（丢包降速），速度骤降甚至瘫痪。而 Hysteria 2 凭借独特的 UDP 拥塞控制架构，实现了恶劣网络下的暴拉提速。本文将为你深度拆解 Hysteria 2 的原理与配置实操。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-hysteria-2-核心设计原理&#34;&gt;一、 Hysteria 2 核心设计原理&lt;/h2&gt;&#xA;&lt;p&gt;Hysteria 2 并不是简单地将数据包打包为 UDP，而是基于 QUIC 协议进行了深度的协议重构与拥塞控制算法改写：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Brutal 拥塞控制算法&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;传统 TCP 算法会将丢包视为网络拥塞信号，从而主动降低发送速率。&lt;/li&gt;&#xA;&lt;li&gt;Hysteria 2 引入了发包速率驱动的 Brutal 算法。用户可在客户端显式指定目标上行与下行带宽，即使出现高丢包，Hy2 也会保持既定的速率积极重传，强行跑满物理带宽。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;伪装与抗封锁（Port Hopping &amp;amp; Salamander）&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hysteria 2 重新设计了 TLS 握手伪装，使其在外观上与标准 HTTP/3 (QUIC) 流量毫无二致。&lt;/li&gt;&#xA;&lt;li&gt;支持端口跳跃（Port Hopping）功能，客户端可在运行过程中动态变换目标 UDP 端口，有效规避运营商针对特定端口的 UDP QoS 限速或封锁。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-hysteria-2-配置实战与应用&#34;&gt;二、 Hysteria 2 配置实战与应用&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-客户端参数调优技巧&#34;&gt;1. 客户端参数调优技巧&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Bandwidth 设置&lt;/strong&gt;：在客户端配置中，&lt;code&gt;up_mbps&lt;/code&gt; 和 &lt;code&gt;down_mbps&lt;/code&gt; 应当根据你本地实际宽带速率的 80%-90% 进行填写。设置过高会导致本地路由器缓冲区溢出，设置过低则无法充分发挥性能。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;obfs 混淆&lt;/strong&gt;：若当地运营商对 QUIC/UDP 审查极其严格，可开启 &lt;code&gt;obfs&lt;/code&gt; 密码混淆，将所有 UDP 数据包做进一步的乱序伪装。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;三-实测表现与适用场景&#34;&gt;三、 实测表现与适用场景&lt;/h2&gt;&#xA;&lt;p&gt;经过在晚高峰高丢包（丢包率 25%）的美国西海岸 VPS 上实测对比：&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>【深度测评】闪跃机场 2026 实测：抗封锁动态协议与极速影音体验</title>
+				<link>https://clashjiedianlab.com/reviews/shanyue-review/</link>
+				<pubDate>Thu, 08 Oct 2026 10:00:00 +0800</pubDate>
+				<guid>https://clashjiedianlab.com/reviews/shanyue-review/</guid>
+				<description>闪跃 (FlashLeap) 机场 2026 深度实测：新一代抗封锁协议、动态分流与晚高峰 4K/8K 秒开。</description>
+			</item>
+	</channel>
+</rss>

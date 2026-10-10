@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>机场选购 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E6%9C%BA%E5%9C%BA%E9%80%89%E8%B4%AD/</link>
+		<description>Recent content in 机场选购 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E6%9C%BA%E5%9C%BA%E9%80%89%E8%B4%AD/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>自建节点 vs 机场订阅深度对比：成本、维护门槛、IP 质量与晚高峰稳定度</title>
+				<link>https://clashjiedianlab.com/docs/vps-self-built-vs-airport/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/vps-self-built-vs-airport/</guid>
+				<description>&lt;p&gt;在科学上网圈子里，自建节点与购买机场订阅各自拥有粉丝。自建 VPS 节点与购买机场究竟各自有何优缺点？在晚高峰速率、IP 干净度与维护成本上差异几何？&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-维度对比&#34;&gt;一、 维度对比&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;IP 独享性&lt;/strong&gt;：自建 VPS 节点由个人独享 IP，适合登录海外银行与敏感账号；机场订阅为多用户共享 IP。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;晚高峰速度&lt;/strong&gt;：普通自建 VPS 多为公网直连，晚高峰易拥塞丢包；优质机场拥有 BGP 中转与 IPLC 专线，晚高峰依然千兆顺畅。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;技术门槛与维护&lt;/strong&gt;：自建节点需要掌握 Linux 运维与域名配置；机场订阅支持一键导入，零门槛使用。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-总结推荐&#34;&gt;二、 总结推荐&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;推荐自建节点：适合有 Linux 基础、需要独享 IP 操作敏感业务的用户。推荐使用 VLESS-REALITY 协议。&lt;/li&gt;&#xA;&lt;li&gt;推荐机场订阅：适合看 4K/8K 视频、玩外服游戏、随时切换多国 IP 的绝大多数用户。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

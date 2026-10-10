@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub 极速加速指南：解决 git clone 超时、RAW 静态资源与 Copilot 连通性 · 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+  <meta name="description" content="开发者必看：GitHub 加速全攻略，解决 git clone 报超时、raw.githubusercontent.com 无法访问及 Copilot 代码补全卡顿。">
+  <link rel="canonical" href="https://clashjiedianlab.com/articles/github-speedup-guide/">
+  <script type="application/ld+json">"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"author\":{\"@type\":\"Person\",\"name\":\"GeekLab\"},\"dateModified\":\"2026-10-09\",\"datePublished\":\"2026-10-09\",\"description\":\"开发者必看：GitHub 加速全攻略，解决 git clone 报超时、raw.githubusercontent.com 无法访问及 Copilot 代码补全卡顿。\",\"headline\":\"GitHub 极速加速指南：解决 git clone 超时、RAW 静态资源与 Copilot 连通性\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"极客网络实验室 | 跨境网络工具与节点实测指南\"},\"url\":\"https://clashjiedianlab.com/articles/github-speedup-guide/\"}"</script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/"><span class="brand-mark">⌁</span><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" onclick="document.body.classList.toggle('nav-open')">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">首页</a><a href="/articles/">文章科普</a><a href="/docs/">教程知识库</a><a href="/recommend/">机场推荐榜</a><a href="/faq/">故障 FAQ</a><a href="/reviews/">深度测评</a><a href="/coupons/">机场优惠码</a><a href="/about/">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main><article class="article shell"><header class="article-header"><p class="eyebrow">ARTICLES / FIELD NOTE</p><h1>GitHub 极速加速指南：解决 git clone 超时、RAW 静态资源与 Copilot 连通性</h1><div class="article-meta"><time>更新于 2026 年 10 月 09 日</time><span>·</span><span>1 分钟阅读</span><span>·</span><span>作者：GeekLab</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-github-访问受阻的核心原因解析">一、 GitHub 访问受阻的核心原因解析</a></li>
+    <li><a href="#二-github-终端与-git-全局代理最佳配置">二、 GitHub 终端与 Git 全局代理最佳配置</a>
+      <ul>
+        <li><a href="#1-git-命令行配置专用代理">1. Git 命令行配置专用代理</a></li>
+        <li><a href="#2-仅对-github-域名开启-git-代理推荐不影响国内-git-仓库">2. 仅对 GitHub 域名开启 Git 代理（推荐：不影响国内 Git 仓库）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-使用-tun-模式与分流规则一劳永逸">三、 使用 TUN 模式与分流规则一劳永逸</a></li>
+  </ul>
+</nav></aside><div class="article-content"><p>对于程序员、开源爱好者与技术开发者而言，<strong>GitHub</strong> 是全球最大的代码托管平台与知识宝库。然而，由于 GitHub 众多 CDN 节点在在国内面临 DNS 污染、TCP 阻断以及晚高峰带宽限制，开发者经常遇到 <code>git clone</code> 速度极慢甚至连接超时（<code>Connection timed out</code>）、<code>raw.githubusercontent.com</code> 无法打开以及 GitHub Copilot 补全卡顿的困扰。本文将为你提供最全面的 GitHub 加速解决方案。</p>
+<h2 id="一-github-访问受阻的核心原因解析">一、 GitHub 访问受阻的核心原因解析</h2>
+<ol>
+<li><strong>DNS 域名解析污染</strong>：<code>github.com</code> 及其静态资源域名（<code>assets-cdn.github.com</code>、<code>raw.githubusercontent.com</code>）在 DNS 解析时常被重定向到不可达的无效 IP，导致浏览器无法加载样式或提示超时。</li>
+<li><strong>Git 命令行与终端默认不走系统代理</strong>：在 Windows / Mac 系统开启代理后，网页端可以访问 GitHub，但在终端执行 <code>git clone</code> 或 <code>npm install</code> 时，终端流量默认绕过了代理客户端的 HTTP 端口。</li>
+<li><strong>GitHub Copilot 实时 WebSocket 连接中断</strong>：Copilot 需要向 <code>api.githubcopilot.com</code> 发起高频实时请求，若节点延迟波动大，会导致代码补全频繁失效。</li>
+</ol>
+<h2 id="二-github-终端与-git-全局代理最佳配置">二、 GitHub 终端与 Git 全局代理最佳配置</h2>
+<h3 id="1-git-命令行配置专用代理">1. Git 命令行配置专用代理</h3>
+<p>在终端（CMD / PowerShell / zsh）中执行以下命令，为 Git 设置 Socks5 / HTTP 代理：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 设置 HTTP 代理 (假设客户端本地端口为 7897)</span>
+</span></span><span style="display:flex;"><span>git config --global http.proxy http://127.0.0.1:7897
+</span></span><span style="display:flex;"><span>git config --global https.proxy http://127.0.0.1:7897
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取消 Git 代理设置 (必要时还原)</span>
+</span></span><span style="display:flex;"><span>git config --global --unset http.proxy
+</span></span><span style="display:flex;"><span>git config --global --unset https.proxy
+</span></span></code></pre></div><h3 id="2-仅对-github-域名开启-git-代理推荐不影响国内-git-仓库">2. 仅对 GitHub 域名开启 Git 代理（推荐：不影响国内 Git 仓库）</h3>
+<p>若你同时使用 gitee.com 或公司内部 GitLab，建议仅针对 <code>github.com</code> 启用代理：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global http.https://github.com.proxy http://127.0.0.1:7897
+</span></span><span style="display:flex;"><span>git config --global https.https://github.com.proxy http://127.0.0.1:7897
+</span></span></code></pre></div><h2 id="三-使用-tun-模式与分流规则一劳永逸">三、 使用 TUN 模式与分流规则一劳永逸</h2>
+<p>在代理客户端（如 Clash Verge Rev / Surge）中配置规则，将 GitHub 资源域名划入代理组：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-KEYWORD,github,代理节点</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-SUFFIX,githubusercontent.com,代理节点</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-SUFFIX,githubassets.com,代理节点</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-SUFFIX,githubcopilot.com,代理节点</span>
+</span></span></code></pre></div><p>开启客户端的 <strong>TUN 虚拟网卡模式</strong> 后，终端命令行、Docker 镜像拉取以及 VS Code 内置的 Copilot 扩展均可自动享受千兆加速，拉取大型开源仓库速率可达 50MB/s 以上。</p>
+<p>配置科学的 GitHub 加速策略，能让你的代码拉取与开发流程如丝般顺滑。</p>
+<div class="article-end"><span>END OF NOTE</span><a href="/">返回首页 ↑</a></div></div></div></article></main>
+  <footer class="site-footer">
+    <div class="shell footer-columns">
+      <div class="footer-col footer-col-brand">
+        <strong>极客网络实验室</strong>
+        <p>机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据软文。</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">内容</span>
+        <a href="/articles/">文章科普</a>
+        <a href="/docs/">教程知识库</a>
+        <a href="/reviews/">深度测评</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">机场</span>
+        <a href="/recommend/">机场推荐</a>
+        <a href="/recommend/">性价比机场</a>
+        <a href="/reviews/">测评记录</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">资源</span>
+        <a href="/docs/">客户端下载</a>
+        <a href="/faq/">常见问题</a>
+        <a href="/faq/">故障 FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">关于与政策</span>
+        <a href="/about/">关于本站</a>
+        <a href="/about/">独立测评标准</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom-new">
+      <p>© 2026 极客网络实验室. 保留所有权利。</p>
+      <p class="disclaimer-text">本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。</p>
+    </div>
+  </footer>
+</body>
+</html>

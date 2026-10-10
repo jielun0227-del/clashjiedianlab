@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>软路由固件插件 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%9B%BA%E4%BB%B6%E6%8F%92%E4%BB%B6/</link>
+		<description>Recent content in 软路由固件插件 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%9B%BA%E4%BB%B6%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>软路由固件与代理插件选型指南：iStoreOS、OpenWrt 与 PassWall / OpenClash</title>
+				<link>https://clashjiedianlab.com/docs/soft-router-firmware-plugins/</link>
+				<pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/docs/soft-router-firmware-plugins/</guid>
+				<description>&lt;p&gt;为了让家里或公司里的所有设备（包含电视盒、游戏机、智能家居、手机电脑）无需安装软件即可无感科学上网，**软路由（Soft Router）**成为了终极网络解决方案。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一-主流软路由固件选型&#34;&gt;一、 主流软路由固件选型&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;iStoreOS&lt;/strong&gt;：基于 OpenWrt 深度定制的“小白友好型”固件，拥有图形化软件商店，适合家用。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;官方原生 OpenWrt&lt;/strong&gt;：系统干净无垃圾插件，稳定性极高。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ImmortalWrt&lt;/strong&gt;：高度优化的 OpenWrt 分支，内置海量硬件驱动。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;二-核心代理插件对比&#34;&gt;二、 核心代理插件对比&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;PassWall&lt;/strong&gt;：基于 Linux nftables 与 Sing-box/Xray 构建，CPU 与内存占用极低，适合低配小主机。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;OpenClash&lt;/strong&gt;：将 Clash Meta 完整内核与 GUI 移植到 OpenWrt，支持丰富可视化规则组。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ShellCrash&lt;/strong&gt;：命令行神器，无需 LuCI Web 界面，可直接运行在原厂路由器固件上。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+	</channel>
+</rss>

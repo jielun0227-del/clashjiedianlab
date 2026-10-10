@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Clash导入 on 极客网络实验室 | 跨境网络工具与节点实测指南</title>
+		<link>https://clashjiedianlab.com/tags/clash%E5%AF%BC%E5%85%A5/</link>
+		<description>Recent content in Clash导入 on 极客网络实验室 | 跨境网络工具与节点实测指南</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 08 Oct 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://clashjiedianlab.com/tags/clash%E5%AF%BC%E5%85%A5/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>机场订阅链接怎么导入</title>
+				<link>https://clashjiedianlab.com/faq/dingyue-daoru/</link>
+				<pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+				<guid>https://clashjiedianlab.com/faq/dingyue-daoru/</guid>
+				<description>&lt;h1 id=&#34;机场订阅链接怎么导入&#34;&gt;机场订阅链接怎么导入&lt;/h1&gt;&#xA;&lt;p&gt;购买机场套餐后，官网控制台都会提供一条专属的&lt;strong&gt;订阅链接 (Subscription URL)&lt;/strong&gt;。以下是各大客户端的导入步骤：&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一-clash-verge-rev--mihomo-party-windows--macos&#34;&gt;一、 Clash Verge Rev / Mihomo Party (Windows / macOS)&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;登录机场官网后台，找到 &lt;strong&gt;“一键导入 Clash”&lt;/strong&gt; 按钮点击自动唤醒客户端；&lt;/li&gt;&#xA;&lt;li&gt;若无法唤醒，点击 &lt;strong&gt;“复制订阅链接”&lt;/strong&gt;；&lt;/li&gt;&#xA;&lt;li&gt;打开 Clash Verge，点击左侧 &lt;strong&gt;&lt;code&gt;配置 (Profiles)&lt;/code&gt;&lt;/strong&gt; 选项卡；&lt;/li&gt;&#xA;&lt;li&gt;将复制的链接粘贴到顶部 URL 输入框中，点击 &lt;strong&gt;&lt;code&gt;导入 (Import)&lt;/code&gt;&lt;/strong&gt;；&lt;/li&gt;&#xA;&lt;li&gt;右键下载好的配置选中并点击 &lt;strong&gt;&lt;code&gt;启用 (Use)&lt;/code&gt;&lt;/strong&gt; 即可。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二-shadowrocket-小火箭---ios&#34;&gt;二、 Shadowrocket (小火箭 - iOS)&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;打开 Shadowrocket，点击右上角的 &lt;strong&gt;&lt;code&gt;+&lt;/code&gt;&lt;/strong&gt; 号；&lt;/li&gt;&#xA;&lt;li&gt;类型选择 &lt;strong&gt;&lt;code&gt;Subscribe&lt;/code&gt;&lt;/strong&gt; (订阅)；&lt;/li&gt;&#xA;&lt;li&gt;在 &lt;code&gt;URL&lt;/code&gt; 栏中粘贴机场订阅链接，备注填写机场名称；&lt;/li&gt;&#xA;&lt;li&gt;点击右上角 &lt;strong&gt;&lt;code&gt;保存&lt;/code&gt;&lt;/strong&gt;；&lt;/li&gt;&#xA;&lt;li&gt;在主界面下拉页面，客户端会自动加载所有节点。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;三-sing-box--surfboard-android--ios&#34;&gt;三、 Sing-box / Surfboard (Android / iOS)&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;打开客户端，进入 &lt;strong&gt;&lt;code&gt;Profiles / 节点&lt;/code&gt;&lt;/strong&gt; 管理；&lt;/li&gt;&#xA;&lt;li&gt;点击新增，类型选择 &lt;strong&gt;&lt;code&gt;HTTP 订阅 / Remote&lt;/code&gt;&lt;/strong&gt;；&lt;/li&gt;&#xA;&lt;li&gt;粘贴订阅链接并更新保存。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;https://clashjiedianlab.com/faq/&#34;&gt;点击返回 FAQ 首页&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
