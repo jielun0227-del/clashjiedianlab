@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+
+# Keep static assets crawlable; block only build metadata.
+Disallow: /.astro/
+Disallow: /_astro/
 Sitemap: https://clashjiedianlab.com/sitemap.xml
