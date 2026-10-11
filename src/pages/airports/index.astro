@@ -1,0 +1,5 @@
+---
+import Base from '../../layouts/Base.astro';
+import { airports } from '../../data/airports';
+---
+<Base title="机场板块 · 极客网络实验室" description="主流机场服务商独立板块与外部入口索引。"><section class="page-intro shell"><p class="eyebrow">AIRPORT DIRECTORY</p><h1>机场板块</h1><p>每个服务商拥有独立页面，信息以公开入口和待验证测试维度为主，不把推广链接等同于独立测评结论。</p></section><section class="section shell"><div class="airport-grid">{airports.map((airport, index) => <article class="airport-card"><div class="post-meta"><span>TOP {(index + 1).toString().padStart(2, '0')}</span><span>DIRECTORY</span></div><h2>{airport.name}</h2><p>{airport.tagline}</p><dl><dt>线路</dt><dd>{airport.route}</dd><dt>客户端</dt><dd>{airport.clients}</dd></dl><div class="airport-actions"><a class="read-more" href={`/airports/${airport.slug}/`}>查看详情 ↗</a><a class="button button-primary" href={airport.link} target="_blank" rel="sponsored noopener noreferrer">官网入口</a></div></article>)}</div></section></Base>

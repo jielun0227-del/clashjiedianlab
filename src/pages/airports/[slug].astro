@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import { airports } from '../../data/airports';
+export function getStaticPaths() { return airports.map((airport) => ({ params: { slug: airport.slug }, props: { airport } })); }
+const { airport } = Astro.props;
+---
+<Base title={`${airport.name}机场板块 · 极客网络实验室`} description={`${airport.name}机场公开入口、线路说明、客户端兼容性与测试注意事项。`}><article class="article shell"><header class="article-header"><p class="eyebrow">AIRPORT DIRECTORY / FIELD NOTE</p><h1>{airport.name}</h1><div class="article-meta">独立机场板块 · 信息持续更新</div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">QUICK LINKS</span><p><a href="/airports/">返回机场板块</a></p><p><a href="/recommend/">查看机场推荐榜</a></p></aside><div class="article-content"><h2>{airport.tagline}</h2><p>本页面提供 {airport.name} 的公开入口与基础信息索引。线路、速度、IP 解锁和晚高峰稳定性需要在你的网络环境中独立测试，本站不将推广链接视为质量保证。</p><h3>基础信息</h3><table><tbody><tr><th>线路说明</th><td>{airport.route}</td></tr><tr><th>客户端</th><td>{airport.clients}</td></tr><tr><th>适合场景</th><td>请根据延迟、丢包、流量、设备数和退款条款自行评估。</td></tr></tbody></table><h3>前往入口</h3><p><a class="button button-primary" href={airport.link} target="_blank" rel="sponsored noopener noreferrer">打开 {airport.name} 官方入口 →</a></p><blockquote>提示：购买或注册前请核对域名、套餐条款、退款政策和订阅有效期。</blockquote></div></div></article></Base>
