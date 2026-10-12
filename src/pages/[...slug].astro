@@ -4,7 +4,7 @@ import { getCollection, render } from 'astro:content';
 import { entryPath, isSectionIndex } from '../lib/routes';
 export async function getStaticPaths() {
   const entries = await getCollection('blog', ({ data }) => data.draft !== true);
-  return entries.filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id)).map((entry) => ({ params: { slug: entryPath(entry) }, props: { entry } }));
+  return entries.filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id) && entryPath(entry) !== 'coupons').map((entry) => ({ params: { slug: entryPath(entry) }, props: { entry } }));
 }
 const { entry } = Astro.props;
 const { Content } = await render(entry);

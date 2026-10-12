@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { airports } from '../data/airports';
+---
+<Base title="2026 机场优惠码与折扣券汇总 · 极客网络实验室" description="汇总快狸、Edgenova、极连云、速界、可信云等机场优惠码，支持一键复制、查看测评与直达官网。">
+  <section class="page-intro shell coupon-intro">
+    <p class="eyebrow">AIRPORT COUPONS / 2026</p>
+    <h1>机场优惠码</h1>
+    <p>点击优惠码即可复制。优惠活动可能临时调整，请在结算页面确认代码是否生效；未提供公开优惠码的服务不会编造折扣。</p>
+  </section>
+  <section class="section shell coupon-section">
+    <div class="coupon-grid">
+      {airports.map((airport, index) => <article class:list={['coupon-card', !airport.coupon && 'coupon-card-muted']}>
+        <div class="coupon-card-head">
+          <span class="coupon-index">OFFER {(index + 1).toString().padStart(2, '0')}</span>
+          <span class="coupon-price">{airport.price}</span>
+        </div>
+        <h2>{airport.name}</h2>
+        <p>{airport.tagline}</p>
+        {airport.coupon ? <button class="coupon-code" type="button" data-code={airport.coupon} aria-label={`复制 ${airport.name} 优惠码 ${airport.coupon}`}>
+          <span>专属优惠码</span><strong>{airport.coupon}</strong><b>复制</b>
+        </button> : <div class="coupon-code coupon-code-empty"><span>优惠状态</span><strong>暂无公开优惠码</strong></div>}
+        <div class="coupon-actions">
+          <a class="read-more" href={`/reviews/${airport.slug}/`}>查看测评 ↗</a>
+          <a class="button button-primary" href={airport.link} target="_blank" rel="sponsored noopener noreferrer">前往官网</a>
+        </div>
+      </article>)}
+    </div>
+    <div class="coupon-notice"><strong>使用提示</strong><p>注册后在套餐结算页面寻找“优惠码 / Coupon”输入框。请核对最终支付金额后再付款；部分代码可能限定新用户、指定套餐或活动期限。</p></div>
+  </section>
+  <div class="copy-toast" role="status" aria-live="polite">优惠码已复制</div>
+  <script is:inline>
+    const toast = document.querySelector('.copy-toast');
+    document.querySelectorAll('.coupon-code[data-code]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const code = button.dataset.code;
+        try {
+          await navigator.clipboard.writeText(code);
+        } catch {
+          const input = document.createElement('textarea');
+          input.value = code;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          input.remove();
+        }
+        const label = button.querySelector('b');
+        if (label) label.textContent = '已复制';
+        toast?.classList.add('is-visible');
+        window.setTimeout(() => {
+          if (label) label.textContent = '复制';
+          toast?.classList.remove('is-visible');
+        }, 1800);
+      });
+    });
+  </script>
+</Base>
