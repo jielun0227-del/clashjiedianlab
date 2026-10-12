@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { aiCategories, aiTools } from '../data/aiTools';
+---
+<Base title="2026 AI 工具指南：79 款软件官网入口 · 极客网络实验室" description="按对话、搜索、编程、办公、设计、视频、音频与自动化分类整理 79 款 AI 工具，并提供官方入口。">
+  <section class="page-intro shell ai-intro">
+    <p class="eyebrow">AI SOFTWARE DIRECTORY / 2026</p>
+    <h1>AI 工具指南</h1>
+    <p>整理常用 AI 软件的产品定位与官方入口。使用搜索或分类筛选快速找到工具，所有“打开官网”按钮均直接前往产品方网站。</p>
+    <div class="ai-stats"><span><strong>{aiTools.length}</strong> 款工具</span><span><strong>{aiCategories.length}</strong> 个分类</span><span><strong>DIRECT</strong> 官网直达</span></div>
+  </section>
+
+  <section class="section shell ai-directory">
+    <div class="ai-controls">
+      <label class="ai-search"><span>搜索工具</span><input id="ai-tool-search" type="search" placeholder="输入 ChatGPT、编程、视频……" autocomplete="off"></label>
+      <div class="ai-filter" aria-label="AI 工具分类">
+        <button class="is-active" type="button" data-category="all">全部</button>
+        {aiCategories.map((category) => <button type="button" data-category={category}>{category}</button>)}
+      </div>
+    </div>
+
+    <div class="ai-tool-grid" id="ai-tool-grid">
+      {aiTools.map((tool, index) => <article class="ai-tool-card" data-category={tool.category} data-search={`${tool.name} ${tool.category} ${tool.description}`.toLowerCase()}>
+        <div class="ai-tool-top"><span class="ai-tool-number">AI {(index + 1).toString().padStart(2, '0')}</span><span class="ai-tool-category">{tool.category}</span></div>
+        <div class="ai-tool-identity"><span class="ai-tool-mark">{tool.name.slice(0, 1)}</span><div><h2>{tool.name}</h2><p>{tool.description}</p></div></div>
+        <div class="ai-tool-footer"><span>{new URL(tool.url).hostname.replace('www.', '')}</span><a class="button button-primary" href={tool.url} target="_blank" rel="noopener noreferrer">打开官网 ↗</a></div>
+      </article>)}
+    </div>
+    <div class="ai-empty" id="ai-empty" hidden>没有找到匹配的 AI 工具，请尝试其他关键词。</div>
+
+    <div class="ai-guide-note"><strong>访问提示</strong><p>部分海外 AI 服务可能存在地区、账号、手机号或付款方式限制。注册和订阅前请查看官网条款，不要通过来源不明的镜像站提交账号、API Key 或付款信息。</p></div>
+  </section>
+
+  <script is:inline>
+    const search = document.querySelector('#ai-tool-search');
+    const cards = [...document.querySelectorAll('.ai-tool-card')];
+    const filters = [...document.querySelectorAll('.ai-filter button')];
+    const empty = document.querySelector('#ai-empty');
+    let category = 'all';
+
+    function applyFilters() {
+      const query = (search?.value || '').trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card) => {
+        const categoryMatch = category === 'all' || card.dataset.category === category;
+        const searchMatch = !query || card.dataset.search.includes(query);
+        const show = categoryMatch && searchMatch;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      empty.hidden = visible !== 0;
+    }
+
+    filters.forEach((button) => button.addEventListener('click', () => {
+      filters.forEach((item) => item.classList.remove('is-active'));
+      button.classList.add('is-active');
+      category = button.dataset.category;
+      applyFilters();
+    }));
+    search?.addEventListener('input', applyFilters);
+  </script>
+</Base>

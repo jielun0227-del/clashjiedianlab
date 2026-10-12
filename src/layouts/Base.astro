@@ -1,6 +1,6 @@
 ---
 const { title = '极客网络实验室 | 跨境网络工具与节点实测指南', description = '深度测评主流网络加速服务商，提供客户端配置教程及网络方案。' } = Astro.props;
-const nav = [['首页','/'],['文章科普','/articles/'],['教程知识库','/docs/'],['机场推荐榜','/recommend/'],['故障 FAQ','/faq/'],['深度测评','/reviews/'],['机场优惠码','/coupons/'],['关于','/about/']];
+const nav = [['首页','/'],['文章科普','/articles/'],['教程知识库','/docs/'],['AI 指南','/ai-guide/'],['机场推荐榜','/recommend/'],['故障 FAQ','/faq/'],['深度测评','/reviews/'],['机场优惠码','/coupons/'],['关于','/about/']];
 ---
 <!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>{title}</title><meta name="description" content={description}><link rel="canonical" href={Astro.url}><link rel="icon" type="image/svg+xml" href="/logo-mark.svg"><link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/airport.css"></head><body>
 <header class="site-header"><div class="shell nav-wrap"><a class="brand" href="/"><img class="brand-logo" src="/logo-mark.svg" alt="极客网络实验室"><span>极客网络实验室<small>NETWORK FIELD NOTES</small></span></a><nav class="main-nav">{nav.map(([name,url]) => <a href={url}>{name}</a>)}</nav></div></header>
