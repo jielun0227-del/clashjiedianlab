@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { airports } from '../../data/airports';
+
+export function getStaticPaths() {
+  return airports.map((airport) => ({ params: { slug: airport.slug }, props: { airport } }));
+}
+
+const { airport } = Astro.props;
+---
+<Base title={`${airport.name}详细测评 · 极客网络实验室`} description={`${airport.name}机场详细测评：最低套餐、线路、客户端、晚高峰测试方法、适用场景与风险提示。`}>
+  <article class="article shell">
+    <header class="article-header">
+      <p class="eyebrow">AIRPORT REVIEW / 2026</p>
+      <h1>{airport.name}详细测评：线路、价格与使用体验核验指南</h1>
+      <div class="article-meta">深度测评 · 更新时间：2026-10-12 · 作者：GeekLab</div>
+      <div class="tested-note"><strong>数据说明</strong><span>公开起价为 {airport.price}；套餐、活动与节点可能动态调整，购买前请在官方入口再次核验。</span></div>
+    </header>
+    <div class="article-layout">
+      <aside class="toc">
+        <span class="eyebrow">ON THIS PAGE</span>
+        <p><a href="#positioning">一、服务定位</a></p>
+        <p><a href="#network">二、线路与客户端</a></p>
+        <p><a href="#pricing">三、价格与套餐</a></p>
+        <p><a href="#testing">四、晚高峰复测</a></p>
+        <p><a href="#audience">五、适用人群</a></p>
+      </aside>
+      <div class="article-content">
+        <h2 id="positioning">一、{airport.name}服务定位</h2>
+        <p>{airport.name}是本站机场目录中的独立候选服务。本页把公开资料、价格信息、实际使用方法和待核验项目分开记录，避免把推广文案直接当作测评结论。入口目前可以访问，但套餐、节点和活动可能随时间、地区或登录状态变化。注册前应核对域名、服务条款、退款窗口、流量周期、并发设备数以及自动续费规则。</p>
+        <p>常见使用流程是注册账号、购买短周期套餐、复制订阅链接、导入客户端，再通过多个节点进行基础连通性测试。不要只看节点数量或“专线”“原生”等描述；真正影响体验的是本地运营商、跨境路由、落地 IP、协议实现以及晚高峰容量。</p>
+        <h2 id="network">二、线路与客户端兼容性</h2>
+        <p>本站记录的线路分类为：<strong>{airport.route}</strong>，客户端方向为：<strong>{airport.clients}</strong>。这些信息用于快速筛选，不能替代路由追踪和连续采样。导入订阅前应先备份现有配置，并确认订阅令牌完整且没有被公开分享。</p>
+        <p>桌面端可以先关闭 TUN，仅测试系统代理；移动端则分别测试 Wi-Fi 和蜂窝网络。如果浏览器可以访问、单个应用却无法联网，应优先检查应用代理支持、DNS、IPv6 和分流规则。AI、流媒体和跨境办公用户还应记录出口地区、验证码频率、视频清晰度、文件上传和视频会议稳定性。</p>
+        <h2 id="pricing">三、价格与套餐核验</h2>
+        <p>当前公开最低正常月付价格为：<strong>{airport.price}</strong>。这里展示的是便于横向比较的起步价格，不代表所有节点、流量额度或高级功能都包含在最低套餐中。进入官网后，应同时核对实际付款周期、每月流量、倍率、设备数量、超额规则、退款条件和支付方式。</p>
+        <p>首次使用建议购买短周期方案，连续使用三至七天后再决定是否续费。年付折算价、限时活动价和低流量体验包不应与正常月付套餐混为一谈。如果服务商只强调低价，却没有说明流量倍率、节点限制或退款流程，应将这些内容视为购买前的重点风险项。</p>
+        <h2 id="testing">四、晚高峰复测方法</h2>
+        <p>建议在北京时间 20:00–23:00 每十五分钟采样一次，并连续测试至少三天。每次记录节点名称、平均延迟、P95 延迟、抖动、丢包率、下载速度及实际访问结果。AI 服务记录是否触发验证码或地区限制；流媒体记录版权地区和最高可用清晰度；办公场景记录网页加载、文件上传和视频会议表现。</p>
+        <p>如果 {airport.name} 的某一地区节点表现较差，可以切换备用节点，但不要只挑最好成绩作为结论。应使用相同设备、相同运营商和相同时间段与其他服务对照。确认订阅有效、DNS 正常、端口没有冲突且多个网络环境都失败后，再向服务商提交带有时间、节点和错误信息的工单。</p>
+        <h2 id="audience">五、适用人群与结论</h2>
+        <p>{airport.name}适合被当作多地区节点、跨平台配置或备用线路的候选服务。轻度用户应优先关注价格透明度、退款政策和客户端易用性；AI、流媒体及跨境办公用户应重点验证出口地区、连续稳定性和高峰丢包；团队用户还要确认并发限制、账号安全和订阅泄露处理机制。</p>
+        <p>本页能够确认公开入口、当前起价、线路分类、客户端方向和复测方法；长期速度、IP 纯净度、流媒体解锁范围及服务稳定性仍需在你的网络环境中验证。请以官网实时套餐和连续测试结果作为最终购买依据。</p>
+        <div class="airport-actions">
+          <a class="button button-primary" href={airport.link} target="_blank" rel="sponsored noopener noreferrer">打开 {airport.name} 官方入口 →</a>
+          <a class="read-more" href="/reviews/">返回深度测评</a>
+          <a class="read-more" href="/recommend/">查看机场推荐榜</a>
+        </div>
+        <blockquote>推广声明：本站可能通过外部链接获得佣金，不增加你的购买成本；外链不等于对服务可用性的保证。</blockquote>
+      </div>
+    </div>
+  </article>
+</Base>

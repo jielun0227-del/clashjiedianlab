@@ -1,7 +1,10 @@
 ---
-import Base from '../../layouts/Base.astro';
 import { airports } from '../../data/airports';
-export function getStaticPaths() { return airports.map((airport) => ({ params: { slug: airport.slug }, props: { airport } })); }
+
+export function getStaticPaths() {
+  return airports.map((airport) => ({ params: { slug: airport.slug }, props: { airport } }));
+}
+
 const { airport } = Astro.props;
+return Astro.redirect(`/reviews/${airport.slug}/`, 301);
 ---
-<Base title={`${airport.name}详细测评 · 极客网络实验室`} description={`${airport.name}机场详细测评：线路、客户端、价格核验、晚高峰测试方法、适用场景与风险提示。`}><article class="article shell"><header class="article-header"><p class="eyebrow">AIRPORT REVIEW / 2026</p><h1>{airport.name}详细测评：线路、价格与使用体验核验指南</h1><div class="article-meta">独立测评文章 · 更新时间：2026-10-11 · 作者：GeekLab</div><div class="tested-note"><strong>数据说明</strong><span>公开入口可访问，但套餐由前端或登录接口动态加载；本文不编造未核验的价格、速度或解锁结论。</span></div></header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><p>一、服务定位</p><p>二、线路与客户端</p><p>三、价格核验</p><p>四、晚高峰复测</p><p>五、适用人群</p></aside><div class="article-content"><h2>一、{airport.name}服务定位</h2><p>{airport.name}是目录中的独立候选服务。本页把官网公开信息、个人实测和待核验项目分开记录，避免把推广文案直接当成结论。当前入口能够返回页面，但套餐、节点和活动可能按地区或登录状态变化。注册前应核对域名、服务条款、退款窗口、流量周期、并发设备数及自动续费规则。</p><p>常见使用流程是注册、购买短周期套餐、复制订阅链接、导入客户端，再用多个节点做基础连通性测试。不要只看节点数量或“专线”“原生”等描述；真正影响体验的是入口运营商、跨境路由、落地 IP、协议实现和高峰期容量。</p><h2>二、线路与客户端</h2><p>目录记录的线路为：<strong>{airport.route}</strong>，客户端方向为：<strong>{airport.clients}</strong>。这些字段只表示公开分类，不能替代 traceroute 或连续采样。导入前先备份配置，检查订阅令牌是否完整；桌面端可先关闭 TUN 测试系统代理，手机端分别测试 Wi‑Fi 与蜂窝网络。浏览器可用而单个应用不可用时，应先查应用代理、DNS、IPv6 和分流规则。</p><p>对需要 AI、流媒体或跨境办公的用户，应额外记录出口地区、验证码频率、视频清晰度、文件上传和视频会议稳定性。一次测速只能代表瞬时带宽，不能证明长期可用。</p><h2>三、价格与套餐核验</h2><p>我们检查了官方入口的初始 HTML，未发现可直接读取的固定价格，页面更像是由前端脚本或登录后接口生成套餐。因此推荐页和本文统一写作<strong>进入官网实时核验</strong>。打开官网后，建议同时记录月付或周期价格、流量额度、倍率、设备数、超额规则、退款条件和支付方式，并保留下单页面截图。</p><p>首次使用优先选择短周期方案，连续使用三至七天再判断是否续费。若只强调低价而不说明流量倍率、节点限制或退款流程，应将其列为风险项。本站可能通过外部链接获得佣金，但不会替你承担购买风险。</p><h2>四、晚高峰复测方法</h2><p>建议在 20:00–23:00 每十五分钟采样一次，连续三天以上；记录节点、平均延迟、P95、抖动、丢包、下载速度和实际访问结果。AI 服务记录是否触发验证，流媒体记录地区版权与清晰度，办公场景记录网页、上传和会议。保存截图或 CSV，并用同一设备、同一运营商与其他服务对照。</p><p>如果 {airport.name} 的某个地区表现较差，可以切换备用节点，但不能只挑最好成绩。确认订阅有效、DNS 正常、端口无冲突且多个网络都失败后，再提交工单，并附上时间、节点、错误信息和测试结果。</p><h2>五、适用人群与结论</h2><p>{airport.name}适合被当作多地区节点、跨平台配置或备用线路的候选服务。轻度用户应优先看价格透明度、退款和易用性；AI、流媒体及跨境办公用户应重点验证出口地区、连续稳定性和高峰丢包；团队用户还要确认并发限制、账号安全和订阅泄露处理。</p><p>本页目前能够确认官方入口、线路分类、客户端方向和复测方法；价格、长期速度、IP 纯净度与解锁范围仍需在你的网络环境中验证。请以官网实时套餐和自己的连续测试为最终依据。</p><p><a class="button button-primary" href={airport.link} target="_blank" rel="sponsored noopener noreferrer">打开 {airport.name} 官方入口 →</a></p><blockquote>推广声明：本站可能通过外部链接获得佣金，不增加你的购买成本；外链不等于对服务可用性的保证。</blockquote></div></div></article></Base>
