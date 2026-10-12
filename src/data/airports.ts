@@ -1,7 +1,7 @@
-export type Airport = { slug: string; name: string; tagline: string; route: string; clients: string; link: string };
+export type Airport = { slug: string; name: string; tagline: string; route: string; clients: string; price?: string; link: string };
 
 export const airports: Airport[] = [
-  { slug: 'kuaili', name: '快狸', tagline: '专线节点与全平台客户端适配', route: 'IPLC / IEPL 线路（以实际测试为准）', clients: 'Clash · Shadowrocket · Sing-box', link: 'https://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm' },
+  { slug: 'kuaili', name: '快狸', tagline: '专线节点与全平台客户端适配', route: 'IPLC / IEPL 线路（以实际测试为准）', clients: 'Clash · Shadowrocket · Sing-box', price: '官网实时核验', link: 'https://aolaiyun01.kuailiaff.com/#/?code=OYKzjZdm' },
   { slug: 'edgenode', name: '边缘节点', tagline: '多地区节点与灵活订阅方案', route: '多入口线路（以实际测试为准）', clients: '主流桌面与移动端', link: 'https://everett7623.edgenovaaff.cc/#/register?code=tT3McfnN' },
   { slug: 'kexinyun', name: '可信云', tagline: '面向日常使用的稳定节点选择', route: '多地区中转（以实际测试为准）', clients: 'Clash · Shadowrocket', link: 'https://yp76688.kosingaff.com/#/register?code=KJxZyDig' },
   { slug: 'sujie', name: '速界', tagline: '低延迟场景与多端配置', route: '多入口线路（以实际测试为准）', clients: 'Clash · Sing-box', link: 'https://lqy001.speedworldaff.com/#/?code=ysM6ozIh' },
