@@ -15,8 +15,35 @@ const posts = all
   .filter((entry) => section !== 'reviews' || !airportReviewIds.has(cleanId(entry.id)))
   .sort((a,b) => (b.data.date?.valueOf() ?? 0) - (a.data.date?.valueOf() ?? 0));
 const titles = { articles:'文章科普', docs:'教程知识库', recommend:'机场推荐榜', faq:'故障 FAQ', reviews:'深度测评' };
+
+const sectionMeta = {
+  articles: {
+    title: '网络科普文章与代理协议原理解析大全 · 极客网络实验室',
+    description: '深入浅出科普网络代理底层原理、常见协议优劣与流量分流机制。涵盖 VLESS、Shadowsocks、IPLC/IEPL 专线架构与跨国网络优化技巧，助你彻底搞懂网络基础知识。'
+  },
+  docs: {
+    title: '主流代理客户端配置教程知识库与调优指南 · 极客网络实验室',
+    description: '涵盖 Clash Verge Rev、Sing-box、Shadowrocket 等主流跨平台客户端图文上手指南。从订阅导入、节点切换、TUN 虚拟网卡模式到 DNS 泄露防范，手把手带你完成全流程实测配置。'
+  },
+  recommend: {
+    title: '2026 年度稳定机场推荐排行榜 | 晚高峰专线实测 · 极客网络实验室',
+    description: '基于晚高峰延迟与丢包监控，精选 2026 年度稳定靠谱的 IPLC/IEPL 专线机场。结合原生 IP 解锁、流媒体与 AI 工具访问测试，提供全方位横向综合评测对比与避坑指南。'
+  },
+  faq: {
+    title: '机场与网络节点使用常见问题解答与故障排查 FAQ · 极客网络实验室',
+    description: '汇总排查订阅导入失败、节点超时连接不上、TUN 模式无网、ChatGPT 访问报错 1020 及账号支付安全等高频故障，提供快速定位原因与可复现的解决方案。'
+  },
+  reviews: {
+    title: '2026 机场深度测评专栏：晚高峰测速、丢包率与解锁能力实测 · 极客网络实验室',
+    description: '汇集快狸、可信云、速界等多家主流机场的独立深度评测报告。公开晚高峰 4K 测速、网络抖动与丢包率、多平台客户端兼容性及价格性价比分析，提供真实中立的实测参考。'
+  }
+};
+
+const currentMeta = sectionMeta[section] || {};
+const pageTitle = index?.data.title && index.data.title.length > 15 ? `${index.data.title} · 极客网络实验室` : (currentMeta.title || `${titles[section]} · 极客网络实验室`);
+const pageDesc = currentMeta.description || index?.data.description;
 ---
-<Base title={`${index?.data.title ?? titles[section]} · 极客网络实验室`} description={index?.data.description}>
+<Base title={pageTitle} description={pageDesc}>
   <section class="page-intro shell">
     <p class="eyebrow">{section?.toUpperCase()}</p>
     <h1>{index?.data.title ?? titles[section]}</h1>

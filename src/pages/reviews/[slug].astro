@@ -8,7 +8,10 @@ export function getStaticPaths() {
 
 const { airport } = Astro.props;
 ---
-<Base title={`${airport.name}详细测评 · 极客网络实验室`} description={`${airport.name}机场详细测评：最低套餐、线路、客户端、晚高峰测试方法、适用场景与风险提示。`}>
+<Base
+  title={`${airport.name}怎么样？2026最新测评：节点线路质量、起步价格与晚高峰稳定性实测 · 极客网络实验室`}
+  description={`${airport.name}怎么样？本篇测评全面拆解其${airport.route}线路质量与网络稳定性。当前公开起步套餐为${airport.price}，支持${airport.clients}等主流全平台客户端。本文为你详细分析晚高峰延迟丢包表现、流媒体与AI工具解锁能力、套餐性价比与退款风险提示，并提供多维度选购建议与官方直达核验通道。`}
+>
   <article class="article shell">
     <header class="article-header">
       <p class="eyebrow">AIRPORT REVIEW / 2026</p>

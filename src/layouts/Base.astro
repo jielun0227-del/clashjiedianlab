@@ -1,5 +1,8 @@
 ---
-const { title = '极客网络实验室 | 跨境网络工具与节点实测指南', description = '深度测评主流网络加速服务商，提供客户端配置教程及网络方案。' } = Astro.props;
+const {
+  title = '极客网络实验室 · 跨境网络工具与节点实测指南 | 2026最新专线测速与配置',
+  description = '极客网络实验室专注于跨境网络加速与机场节点深度测评，提供 Clash Verge Rev、Shadowrocket、Sing-box 客户端保姆级配置教程。基于真实环境连续监测 IPLC/IEPL 专线晚高峰延迟、丢包率、流媒体解锁及 AI 工具访问稳定性，为广大用户提供客观、中立、可复现的网络选型参考。'
+} = Astro.props;
 const nav = [['首页','/'],['文章科普','/articles/'],['教程知识库','/docs/'],['AI 指南','/ai-guide/'],['机场推荐榜','/recommend/'],['故障 FAQ','/faq/'],['深度测评','/reviews/'],['机场优惠码','/coupons/'],['关于','/about/']];
 ---
 <!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>{title}</title><meta name="description" content={description}><link rel="canonical" href={Astro.url}><link rel="icon" type="image/svg+xml" href="/logo-mark.svg"><link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/airport.css"></head><body>
