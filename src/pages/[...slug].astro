@@ -1,14 +1,39 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
-import { entryPath, isSectionIndex } from '../lib/routes';
+import { entryPath, cleanId, isSectionIndex } from '../lib/routes';
+
 export async function getStaticPaths() {
-  const entries = await getCollection('blog', ({ data }) => data.draft !== true);
-  return entries.filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id) && entryPath(entry) !== 'coupons').map((entry) => ({ params: { slug: entryPath(entry) }, props: { entry } }));
+  const blogEntries = await getCollection('blog', ({ data }) => data.draft !== true);
+  const wikiEntries = await getCollection('wiki', ({ data }) => data.draft !== true).catch(() => []);
+  const compareEntries = await getCollection('compare', ({ data }) => data.draft !== true).catch(() => []);
+
+  const blogPaths = blogEntries
+    .filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id) && entryPath(entry) !== 'coupons')
+    .map((entry) => ({
+      params: { slug: entryPath(entry) },
+      props: { entry, sectionName: entryPath(entry).split('/')[0] }
+    }));
+
+  const wikiPaths = wikiEntries
+    .filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id))
+    .map((entry) => ({
+      params: { slug: `wiki/${entry.data.slug ?? cleanId(entry.id)}` },
+      props: { entry, sectionName: 'wiki' }
+    }));
+
+  const comparePaths = compareEntries
+    .filter((entry) => !entry.data.sectionIndex && !isSectionIndex(entry.id))
+    .map((entry) => ({
+      params: { slug: `compare/${entry.data.slug ?? cleanId(entry.id)}` },
+      props: { entry, sectionName: 'compare' }
+    }));
+
+  return [...blogPaths, ...wikiPaths, ...comparePaths];
 }
-const { entry } = Astro.props;
+
+const { entry, sectionName = 'ARTICLE' } = Astro.props;
 const { Content } = await render(entry);
-const parts = entry.id.split('/');
-const section = parts[0];
+const eyebrow = sectionName.toUpperCase();
 ---
-<Base title={`${entry.data.title ?? '文章'} · 极客网络实验室`} description={entry.data.description}><article class="article shell"><header class="article-header"><p class="eyebrow">{section.toUpperCase()} / FIELD NOTE</p><h1>{entry.data.title}</h1><div class="article-meta">更新于 {entry.data.lastmod?.toISOString().slice(0,10) ?? entry.data.date?.toISOString().slice(0,10)} · 作者：GeekLab</div>{entry.data.tested && <div class="tested-note"><strong>测试说明</strong><span>{entry.data.tested}</span></div>}</header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><p>本文目录请结合正文阅读。</p></aside><div class="article-content"><Content /></div></div></article></Base>
+<Base title={`${entry.data.title ?? '文章'} · 极客网络实验室`} description={entry.data.description}><article class="article shell"><header class="article-header"><p class="eyebrow">{eyebrow} / FIELD NOTE</p><h1>{entry.data.title}</h1><div class="article-meta">更新于 {entry.data.lastmod?.toISOString().slice(0,10) ?? entry.data.date?.toISOString().slice(0,10)} · 作者：GeekLab</div>{entry.data.tested && <div class="tested-note"><strong>测试说明</strong><span>{entry.data.tested}</span></div>}</header><div class="article-layout"><aside class="toc"><span class="eyebrow">ON THIS PAGE</span><p>本文目录请结合正文阅读。</p></aside><div class="article-content"><Content /></div></div></article></Base>

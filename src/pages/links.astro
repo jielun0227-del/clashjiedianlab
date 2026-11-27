@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+
+const links = [
+  {
+    name: '逼哥机场',
+    domain: 'bigejichang.vip',
+    url: 'https://bigejichang.vip',
+    tagline: '稳定高速机场推荐与翻墙梯子测评',
+    desc: '专注优质专线与中转机场测评，提供全天候晚高峰速率与节点可用性实测数据。',
+    badge: '推荐伙伴'
+  },
+  {
+    name: '极客网络实验室',
+    domain: 'clashjiedianlab.com',
+    url: 'https://clashjiedianlab.com',
+    tagline: '跨境网络工具与节点实测指南',
+    desc: '本站官方主页，长期追踪主流加速服务商线路质量，提供客户端配置教程与网络方案。',
+    badge: '本站主页'
+  },
+  {
+    name: '机场结果',
+    domain: 'jichangjieguo.blog',
+    url: 'https://jichangjieguo.blog',
+    tagline: '真实节点测速与连通性监测',
+    desc: '公开透明的机场测速数据发布平台，记录各平台晚高峰延迟、丢包率与网络表现。',
+    badge: '数据监测'
+  },
+  {
+    name: '机场图鉴',
+    domain: 'jichangtu.online',
+    url: 'https://jichangtu.online',
+    tagline: '全景式机场服务商图鉴与导航',
+    desc: '系统化收录主流网络加速品牌，按协议、线路拓扑与价格定位提供全景索引。',
+    badge: '全景导航'
+  },
+  {
+    name: '机场优选',
+    domain: 'jichangvpn.blog',
+    url: 'https://jichangvpn.blog',
+    tagline: '高性价比与稳定机场优选指南',
+    desc: '面向外贸办公、学术科研与流媒体解锁的精选节点指南，助你快速避坑选型。',
+    badge: '精选指南'
+  },
+  {
+    name: '梯子指南',
+    domain: 'tizizhan.org',
+    url: 'https://tizizhan.org',
+    tagline: '科学上网与客户端配置综合指南',
+    desc: '涵盖 Clash、Sing-box、Shadowrocket 等主流代理工具的进阶配置与实战教程。',
+    badge: '工具指南'
+  },
+  {
+    name: '椰汁网络日志',
+    domain: 'yzrztop.com',
+    url: 'https://yzrztop.com',
+    tagline: '极客技术随笔与网络服务测评',
+    desc: '分享前沿跨境网络协议解析、VPS 自建技巧与主流高速专线使用心得。',
+    badge: '技术随笔'
+  },
+  {
+    name: '飞行手册',
+    domain: 'fanqiangjc.blog',
+    url: 'https://fanqiangjc.blog',
+    tagline: '跨境出海与加速工具全流程手册',
+    desc: '为出海开发者、跨境电商从业者提供系统、详实的网络环境搭建与维护手册。',
+    badge: '实战手册'
+  }
+];
+---
+
+<Base
+  title="友情链接 · 优质网络技术与博客导航 · 极客网络实验室"
+  description="极客网络实验室友情链接平台：收录逼哥机场、机场结果、机场图鉴、机场优选、梯子指南、椰汁网络日志、飞行手册等优质跨境网络科技博客与节点测评站点。欢迎同类高质量站点交换友链互促成长。"
+>
+  <section class="page-intro shell">
+    <p class="eyebrow">FRIENDLY LINKS / PARTNERS</p>
+    <h1>友情链接</h1>
+    <p>汇聚优质跨境网络、技术科普与独立博客站点，共享高质量入站连接与技术生态。排名不分先后。</p>
+  </section>
+
+  <section class="section shell">
+    <div class="post-grid post-grid-wide">
+      {links.map((link) => (
+        <article class="post-card" style="display:flex; flex-direction:column; justify-content:space-between; border-radius:6px;">
+          <div>
+            <div class="post-meta">
+              <span>{link.badge}</span>
+              <span style="font-family:monospace; color:var(--muted);">{link.domain}</span>
+            </div>
+            <h2 style="font-size:22px; margin:14px 0 8px;">
+              <a href={link.url} target="_blank" rel="noopener external" style="color:var(--deep);">{link.name}</a>
+            </h2>
+            <p style="font-weight:600; color:var(--ink); margin-bottom:8px; font-size:14px;">{link.tagline}</p>
+            <p style="color:var(--muted); font-size:14px; line-height:1.6;">{link.desc}</p>
+          </div>
+          <div style="margin-top:20px; padding-top:14px; border-top:1px dashed var(--line); display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px; color:var(--muted); font-family:monospace;">{link.domain}</span>
+            <a class="button button-primary" href={link.url} target="_blank" rel="noopener external" style="padding:7px 14px; font-size:13px;">
+              访问网站 ↗
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div style="margin-top:50px; padding:30px; background:var(--panel); border:1px solid var(--line); border-radius:6px;">
+      <h3 style="margin-top:0; font-size:20px; color:var(--deep);">🤝 友链申请与交换说明</h3>
+      <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:16px;">
+        极客网络实验室欢迎网络科技、开发者博客、代理协议研究、VPS 技术以及跨境办公等相关领域的高质量独立站点交换友情链接。共同提升搜索引擎权威度与优质域名入站权重。
+      </p>
+      <div style="background:var(--white); padding:18px; border:1px solid var(--line); border-radius:4px; font-size:14px; line-height:1.8;">
+        <strong>本站信息：</strong><br />
+        • 网站名称：<strong>极客网络实验室</strong><br />
+        • 网站地址：<strong>https://clashjiedianlab.com/</strong><br />
+        • 网站描述：<strong>跨境网络工具与节点实测指南，提供客观中立的专线横评与客户端配置。</strong><br />
+        • 站点图标：<strong>https://clashjiedianlab.com/logo-mark.svg</strong>
+      </div>
+      <p style="font-size:13px; color:var(--muted); margin-top:14px; margin-bottom:0;">
+        ※ 申请前请先在贵站添加本站链接，并确保网站内容持续更新、无违规内容。
+      </p>
+    </div>
+  </section>
+</Base>

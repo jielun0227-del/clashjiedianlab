@@ -4,17 +4,37 @@ import { getCollection } from 'astro:content';
 import { entryPath, cleanId, isSectionIndex } from '../../lib/routes';
 import { airports } from '../../data/airports';
 export function getStaticPaths() {
-  return ['articles','docs','recommend','faq','reviews'].map((section) => ({ params: { section } }));
+  return ['articles','docs','recommend','faq','reviews','wiki','compare'].map((section) => ({ params: { section } }));
 }
 const { section } = Astro.params;
 const all = await getCollection('blog', ({ data }) => data.draft !== true);
+const wikiEntries = await getCollection('wiki', ({ data }) => data.draft !== true).catch(() => []);
+const compareEntries = await getCollection('compare', ({ data }) => data.draft !== true).catch(() => []);
+
 const index = all.find((entry) => cleanId(entry.id) === `${section}/_index`);
 const airportReviewIds = new Set(airports.map((airport) => `reviews/${airport.slug}-review`));
-const posts = all
-  .filter((entry) => cleanId(entry.id).startsWith(`${section}/`) && !isSectionIndex(entry.id))
-  .filter((entry) => section !== 'reviews' || !airportReviewIds.has(cleanId(entry.id)))
-  .sort((a,b) => (b.data.date?.valueOf() ?? 0) - (a.data.date?.valueOf() ?? 0));
-const titles = { articles:'文章科普', docs:'教程知识库', recommend:'机场推荐榜', faq:'故障 FAQ', reviews:'深度测评' };
+
+let posts: any[] = [];
+if (section === 'wiki') {
+  posts = wikiEntries.map((e) => ({ ...e, customPath: `wiki/${e.data.slug ?? cleanId(e.id)}` }));
+} else if (section === 'compare') {
+  posts = compareEntries.map((e) => ({ ...e, customPath: `compare/${e.data.slug ?? cleanId(e.id)}` }));
+} else {
+  posts = all
+    .filter((entry) => cleanId(entry.id).startsWith(`${section}/`) && !isSectionIndex(entry.id))
+    .filter((entry) => section !== 'reviews' || !airportReviewIds.has(cleanId(entry.id)))
+    .sort((a,b) => (b.data.date?.valueOf() ?? 0) - (a.data.date?.valueOf() ?? 0));
+}
+
+const titles: Record<string, string> = {
+  articles: '文章科普',
+  docs: '教程知识库',
+  recommend: '机场推荐榜',
+  faq: '故障 FAQ',
+  reviews: '深度测评',
+  wiki: '百科知识库',
+  compare: '协议与线路对比'
+};
 
 const sectionMeta = {
   articles: {
@@ -36,6 +56,14 @@ const sectionMeta = {
   reviews: {
     title: '2026 机场深度测评专栏：晚高峰测速、丢包率与解锁能力实测 · 极客网络实验室',
     description: '汇集快狸、可信云、速界等多家主流机场的独立深度评测报告。公开晚高峰 4K 测速、网络抖动与丢包率、多平台客户端兼容性及价格性价比分析，提供真实中立的实测参考。'
+  },
+  wiki: {
+    title: '跨境网络知识库与核心协议百科 Wiki · 极客网络实验室',
+    description: '跨境网络知识库与常用协议百科：深度拆解 Shadowsocks、VLESS Reality、Hysteria 2、TUIC、gRPC 及各类加密分流规则核心技术细节。'
+  },
+  compare: {
+    title: '主流代理协议与网络专线架构深度横向对比 · 极客网络实验室',
+    description: '全方位横向对比 IPLC 专线、IEPL 专线、BGP 中转与公网直连性能差异，多维度评测各类代理协议与客户端实际表现，助你精准选型不踩坑。'
   }
 };
 
@@ -47,7 +75,7 @@ const pageDesc = currentMeta.description || index?.data.description;
   <section class="page-intro shell">
     <p class="eyebrow">{section?.toUpperCase()}</p>
     <h1>{index?.data.title ?? titles[section]}</h1>
-    <p>{index?.data.description}</p>
+    <p>{index?.data.description ?? currentMeta.description}</p>
   </section>
 
   {section === 'recommend' && <section class="section shell">
@@ -73,9 +101,9 @@ const pageDesc = currentMeta.description || index?.data.description;
   {posts.length > 0 && <section class="section shell">
     <div class="post-grid post-grid-wide">{posts.map((post) => <article class="post-card">
       <div class="post-meta"><span>{section?.toUpperCase()}</span><time>{post.data.date?.toISOString().slice(0,10)}</time></div>
-      <h2><a href={`/${entryPath(post)}/`}>{post.data.title}</a></h2>
+      <h2><a href={`/${post.customPath ?? entryPath(post)}/`}>{post.data.title}</a></h2>
       <p>{post.data.description}</p>
-      <a class="read-more" href={`/${entryPath(post)}/`}>继续阅读 ↗</a>
+      <a class="read-more" href={`/${post.customPath ?? entryPath(post)}/`}>继续阅读 ↗</a>
     </article>)}</div>
   </section>}
 </Base>
